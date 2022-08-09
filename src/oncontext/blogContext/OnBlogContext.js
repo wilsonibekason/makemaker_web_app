@@ -125,8 +125,7 @@ export const BlogContextProvider = ({ children }) => {
         message,
         isCommented,
         handleBlogFilter,
-        activeFilterBtn,
-        inActiveFilterBtn,
+
         animateFilter,
         animateCard,
       }}
