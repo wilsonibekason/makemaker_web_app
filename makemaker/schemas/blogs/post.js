@@ -37,11 +37,25 @@ export default {
         hotspot: true,
       },
     },
+    // {
+    //   name: "categories",
+    //   title: "Categories",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "categorys" } }],
+    // },ray
     {
-      name: "categories",
-      title: "Categories",
+      name: "tags",
+      title: "Tags",
       type: "array",
-      of: [{ type: "reference", to: { type: "categorys" } }],
+      of: [
+        {
+          name: "tag",
+          title: "Tag ",
+          type: "string",
+          description:
+            "each tags should contain at least on the listed on blog content and should be lowercase  ",
+        },
+      ],
     },
     {
       name: "category",

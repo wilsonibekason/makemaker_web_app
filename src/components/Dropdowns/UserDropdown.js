@@ -31,16 +31,18 @@ const UserDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        <span className="absolute -right-2 text-sm text-blueGray-200 w-5 rounded-full text-center font-semibold h-4 bg-blueGray-600">
+        <span className="absolute right-12 text-sm text-gray-200 w-5 rounded-lg text-center font-semibold h-4 bg-gray-600 px-auto">
           {totalQuantities}
         </span>
         <div className="items-center flex">
-          <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
+          <span className="w-12 h-12 text-sm text-white bg-gray-200 inline-flex items-center justify-center rounded-full">
             <BsCart3 width={40} />
             <img
               alt="..."
               className="w-full rounded-full align-middle border-none shadow-lg"
-              src={require("../../assets/img/cart.png").default}
+              src={
+                "https://i.pinimg.com/originals/bd/14/9c/bd149c5c05185de274f040d809f93354.png"
+              }
               //src="https://cdn.pixabay.com/photo/2013/07/12/14/53/cart-148964__340.png"
             />
           </span>
@@ -64,7 +66,7 @@ const UserDropdown = () => {
         {/* <a
           href="#pablo"
           className={
-            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+            "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700"
           }
           onClick={(e) => e.preventDefault()}
         >
