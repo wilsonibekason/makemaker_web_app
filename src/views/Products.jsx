@@ -30,6 +30,7 @@ const Product = () => {
     inActiveFilterBtn,
     animateFilter,
     productBannerID,
+    animateCard,
   } = useStateContextProduct();
   console.log(productHeader);
   console.log(productBannerID);
@@ -119,7 +120,15 @@ const Product = () => {
           <div className="container mx-auto">
             <div className="justify-center flex flex-wrap">
               <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
-                <div className="flex flex-wrap">
+                {/** MOTION DIV ITEM */}
+                <motion.div
+                  className="flex flex-wrap"
+                  animate={animateCard}
+                  transition={{
+                    duration: 0.5,
+                    delayChildren: 0.5,
+                  }}
+                >
                   {productBanner?.map((item, index) => {
                     const {
                       title,
@@ -137,34 +146,33 @@ const Product = () => {
                       ? moment(publishedAt).utc().format("YYYY-MM-DD")
                       : "";
                     return (
-                      <div
+                      <motion.div
+                        // whileHover={{ opacity: [0, 1] }}
+                        // transition={{
+                        //   duration: 0.25,
+                        //   ease: "easeInOut",
+                        //   staggerChildren: 0.5,
+                        // }}
                         className="w-full md:w-4/12 px-4 mr-auto ml-auto"
                         key={index}
                       >
                         <Link to={`/productdetails/${_id}`}>
-                          <div
-                            className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150"
-                            // onClick={() =>
-                            //   navigate(`productdetails/${_id}`, {
-                            //     replace: true,
-                            //   })
-                            // }
-                          >
+                          <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-blue-400 ease-linear transition-all duration-150">
                             <img
                               alt="..."
                               src={urlFor(image)}
-                              className="w-full align-middle rounded-t-lg"
+                              className="w-full  h-72 align-middle rounded-t-lg"
                             />
                             <blockquote className="relative p-8 mb-4">
                               <svg
                                 preserveAspectRatio="none"
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 583 95"
-                                className="absolute left-0 w-full block h-95-px -top-94-px"
+                                className="absolute left-0 w-full block h-95-px -top-94-px "
                               >
                                 <polygon
                                   points="-30,95 583,95 583,65"
-                                  className="text-lightBlue-500 fill-current"
+                                  className="text-transparent fill-current"
                                 ></polygon>
                               </svg>
                               <div className="flex justify-between sm:flex-row">
@@ -188,14 +196,13 @@ const Product = () => {
                             </blockquote>
                           </div>
                         </Link>
-                      </div>
+                      </motion.div>
                     );
                   })}
-
                   {/** end of product item */}
-
                   {/** end of product Items */}
-                </div>
+                </motion.div>
+                {/** END OF MOTION DIV */}
               </div>
             </div>
           </div>

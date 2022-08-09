@@ -72,9 +72,9 @@ export const ProductProvider = ({ children }) => {
 
   const handleProductFilter = (productItem) => {
     setAnimateFilter(productItem);
-    setAnimateCard({ y: 100, opacity: 0 });
+    setAnimateCard([{ y: 100, opacity: 0 }]);
     setTimeout(() => {
-      setAnimateCard({ y: 0, opacity: 100 });
+      setAnimateCard([{ y: 0, opacity: 1 }]);
       productItem === "All"
         ? setFilterProducts(productBanner)
         : setFilterProducts(
@@ -82,7 +82,7 @@ export const ProductProvider = ({ children }) => {
               product?.tags?.includes(productItem)
             )
           );
-    }, 1000);
+    }, 500);
   };
   // SECTION FOR FILTERING PRODUCTS
 
@@ -116,6 +116,7 @@ export const ProductProvider = ({ children }) => {
         inActiveFilterBtn,
         animateFilter,
         productBannerID,
+        animateCard,
       }}
     >
       {children}
