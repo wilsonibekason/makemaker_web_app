@@ -18,14 +18,14 @@ export default function Navbar(props) {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link
               to="/"
-              className=" inline-block mr-3 py-0 whitespace-nowrap w-24 px-2"
+              className=" inline-block mr-3 py-0 whitespace-nowrap  px-2"
             >
+              jjs
               <img
                 src={reachImg}
                 alt=""
-                className="max-w-full mx-auto p-0 h-auto align-middle my-0"
-                width={110}
-                height={10}
+                className="shadow-md rounded-full max-w-full  w-24 h-72 mx-auto p-0 bg-white"
+                //className="max-w-full w-full h-71 mx-auto p-0 h-auto align-middle my-0"
               />
               {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
             </Link>
@@ -52,9 +52,9 @@ export default function Navbar(props) {
                   onClick={() => navigate(`${navItems}`, { replace: true })}
                 >
                   {/* <Link to={`${navItems}`}> */}
-                  <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
+                  <a className="hover:text-blue-300 text-blue-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold">
                     {/**far fa-file-alt */}
-                    <i className="text-blueGray-400  text-lg leading-lg mr-2" />{" "}
+                    <i className="text-blue-400  text-lg leading-lg mr-2" />{" "}
                     {navItems}
                   </a>
                   {/* </Link> */}

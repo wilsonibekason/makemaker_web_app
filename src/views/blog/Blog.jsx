@@ -108,7 +108,7 @@ const Blog = () => {
             {/* <FeaturedPosts /> */}
           </h3>
           <div className="block pb-6">
-            {["All", "STEM", "CAD", "Electronics"]?.map((item, index) => (
+            {["all", "stem", "cad", "electronics"]?.map((item, index) => (
               <span
                 className={`${
                   animateFilter === item ? activeFilterBtn : inActiveFilterBtn

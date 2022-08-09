@@ -29,9 +29,7 @@ export default function Navbar(props) {
               <img
                 src={reachImg}
                 alt=""
-                className="max-w-full mx-auto p-0 h-auto align-middle my-0"
-                width={130}
-                height={10}
+                className="max-w-full mx-auto p-0 h-auto align-middle my-0 shadow-md  w-72  "
               />
               {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
             </Link>
@@ -54,17 +52,13 @@ export default function Navbar(props) {
             <ul className="flex flex-col lg:flex-row list-none mr-auto">
               {navComponents?.map((navItems, index) => (
                 <li className="flex items-center" key={index + navItems}>
-                  {/* <Link
-                    to={`${navItems}`}
-                 
-                  > */}
                   <span
                     className="text-white hover:text-blueGray-500 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                    onClick={() => navigate(`${navItems}`, { replace: true })}
+                    // onClick={() => navigate(`${navItems}`, { replace: true })}
                   >
-                    {/**far fa-file-alt */}
-                    <i className=" text-lg leading-lg mr-2" /> {navItems}
-                    {/* </Link> */}
+                    <Link to={`${navItems}`}>
+                      <i className=" text-lg leading-lg mr-2" /> {navItems}
+                    </Link>
                   </span>
                 </li>
               ))}
