@@ -306,14 +306,16 @@ const BlogDetails = () => {
               </div>
             </div>
             {/**moreblogs */}
-            <div className="my-4 p-16 bg-gray-400">
-              <h2 className="text-lg lg:text-2xl md:text-xl font-bold text-white text-center letter-spacing my-2">
-                More blogs like this{" "}
+            <div className="mx-auto my-2">
+              <h2 className="text-3xl md:text-xl lg:text-3xl font-bold text-gray-500 text-center underline">
+                More Posts Like This
               </h2>
-              <div className="flex flex-col md:flex-row lg:flex-row -p-4">
-                <MoreBlogs />
-                <MoreBlogs />
-              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">
+              <MoreBlogs />
+              <MoreBlogs />
+              <MoreBlogs />
+              <MoreBlogs />
             </div>
             {/**moreblogs */}
             {/* <CommentForm /> */}
