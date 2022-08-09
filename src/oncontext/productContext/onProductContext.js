@@ -27,16 +27,16 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productBanner, setProductsBanner] = useState([]);
   const [productHeader, setProductHeader] = useState([]);
-  const [productIsLoading, setProductIsLoading] = useState(false);
-  const [productIsLoaded, setProductIsLoaded] = useState(false);
-  const [productError, setProductError] = useState(false);
-  const [productSuccess, setProductSuccess] = useState(false);
-  const [productErrorMsg, setProductErrorMsg] = useState("");
-  const [productSuccessMsg, setProductSuccessMsg] = useState("");
+  // const [productIsLoading, setProductIsLoading] = useState(false);
+  // const [productIsLoaded, setProductIsLoaded] = useState(false);
+  // const [productError, setProductError] = useState(false);
+  // const [productSuccess, setProductSuccess] = useState(false);
+  // const [productErrorMsg, setProductErrorMsg] = useState("");
+  // const [productSuccessMsg, setProductSuccessMsg] = useState("");
   // STATES FOR FILTERING PRODUCTS
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterProducts, setFilterProducts] = useState([]);
-  const [animateFilter, setAnimateFilter] = useState("All");
+  const [animateFilter, setAnimateFilter] = useState("all");
   // declaring reducer actions
   //
   // declaring acti
@@ -75,13 +75,15 @@ export const ProductProvider = ({ children }) => {
     setAnimateCard([{ y: 100, opacity: 0 }]);
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
-      productItem === "All"
-        ? setFilterProducts(productBanner)
-        : setFilterProducts(
-            productBanner?.filter((product) =>
-              product?.tags?.includes(productItem)
-            )
-          );
+      if (productItem === "all") {
+        setFilterProducts(productBanner);
+      } else {
+        setFilterProducts(
+          productBanner?.filter((product) =>
+            product?.tags?.includes(productItem)
+          )
+        );
+      }
     }, 500);
   };
   // SECTION FOR FILTERING PRODUCTS

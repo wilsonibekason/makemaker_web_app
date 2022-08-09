@@ -15,11 +15,15 @@ export const BlogContextProvider = ({ children }) => {
   const [isError, setIsError] = useState(null);
   const [localStorage, setLocalStorage] = useState(null);
   /// global for fetching recent and ralated blogsat
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+  const [filterBlogs, setFilterBlogs] = useState([]);
+  const [animateFilter, setAnimateFilter] = useState("all");
   const [formData, setFormData] = useState({
     fullName: "",
     message: "",
     email: "",
   });
+
   //destructure formData Input
   const { fullName, message, email } = formData;
   // handkeChange for blog comment
@@ -78,6 +82,22 @@ export const BlogContextProvider = ({ children }) => {
   }, []);
 
   /////
+  ////////////////
+  const handleBlogFilter = (blogItem) => {
+    setAnimateFilter(blogItem);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+      if (blogItem === "all") {
+        setFilterBlogs(blogAuthor);
+      } else {
+        setFilterBlogs(
+          blogAuthor?.filter((product) => product?.tags?.includes(blogItem))
+        );
+      }
+    }, 1000);
+  };
+  ///////////////
   console.log("====================================");
   console.log(blogAuthor);
   console.log("====================================");
@@ -104,6 +124,11 @@ export const BlogContextProvider = ({ children }) => {
         email,
         message,
         isCommented,
+        handleBlogFilter,
+        activeFilterBtn,
+        inActiveFilterBtn,
+        animateFilter,
+        animateCard,
       }}
     >
       {children}

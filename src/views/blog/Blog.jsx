@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbars/AuthNavbar";
 import React from "react";
+import { motion } from "framer-motion";
 import BlogNavbar from "../../components/Navbars/BlogNavbar";
 import { useStateContext } from "../../oncontext/OnLandingContext";
 import Footer from "../../components/Footers/Footer";
@@ -23,14 +24,12 @@ const Blog = () => {
     setLoading,
     BlogDetails,
     setBlogDetails,
+    handleBlogFilter,
+    animateFilter,
+    animateCard,
   } = useStateBlogContext();
 
-  const {
-    animateFilter,
-    handleProductFilter,
-    activeFilterBtn,
-    inActiveFilterBtn,
-  } = useStateContextProduct();
+  const { activeFilterBtn, inActiveFilterBtn } = useStateContextProduct();
 
   // image carousel slide
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
@@ -115,7 +114,7 @@ const Blog = () => {
                   animateFilter === item ? activeFilterBtn : inActiveFilterBtn
                 }`}
                 key={index}
-                onClick={() => handleProductFilter(item)}
+                onClick={() => handleBlogFilter(item)}
               >
                 {item}
               </span>
@@ -134,7 +133,7 @@ const Blog = () => {
         <div className="container mx-auto">
           <div className="justify-center flex flex-wrap md:flex-col">
             <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
-              <div className="flex flex-wrap">
+              <motion.div className="flex flex-wrap">
                 {blogAuthor?.map((item, INDEX) => {
                   const {
                     _id,
@@ -202,7 +201,7 @@ const Blog = () => {
                 {/** end of product item */}
 
                 {/** end of product Items */}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

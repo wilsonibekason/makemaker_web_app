@@ -95,13 +95,13 @@ const Product = () => {
             </div>
           );
         })}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center bg-gray-300">
           <div className="w-full md:w-4/12 px-6 md:px-4 ml-auto mr-auto mt-6">
-            <h3 className="text-2xl  text-blueGray-900 font-semibold mb-1 leading-normal align-center uppercase">
+            <h3 className="text-2xl  text-black font-semibold mb-1 leading-normal align-center uppercase">
               Filter categories
             </h3>
             <div className="block pb-6">
-              {["All", "Arduino", "CAD", "Electronics"]?.map((item, index) => (
+              {["all", "arduino", "cad", "electronics"]?.map((item, index) => (
                 <span
                   className={`${
                     animateFilter === item ? activeFilterBtn : inActiveFilterBtn
@@ -116,7 +116,7 @@ const Product = () => {
           </div>
         </div>
         {/** add products for makeMaker */}
-        <section className="block relative z-1 bg-blueGray-600 ">
+        <section className="block relative z-1 bg-gray-200 ">
           <div className="container mx-auto">
             <div className="justify-center flex flex-wrap">
               <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
