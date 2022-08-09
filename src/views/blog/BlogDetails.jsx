@@ -131,7 +131,7 @@ const BlogDetails = () => {
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                     <div className="pr-12">
                       <h1 className="text-white font-bold text-4xl">{title}</h1>
-                      <p className="mt-4 text-sm text-blueGray-200">
+                      <p className="mt-4 text-sm text-gray-200">
                         {description}
                       </p>
                     </div>
@@ -152,7 +152,7 @@ const BlogDetails = () => {
                   y="0"
                 >
                   <polygon
-                    className="text-blueGray-200 fill-current"
+                    className="text-gray-200 fill-current"
                     points="2560 0 2560 100 0 100"
                   ></polygon>
                 </svg>
@@ -160,7 +160,7 @@ const BlogDetails = () => {
             </div>
 
             {/** BLOGDETAILS COMPONENT */}
-            <div className="container mx-auto my-4 bg-blueGray-200">
+            <div className="container mx-auto my-4 bg-gray-200">
               <div className="flex justify-between items-center flex-col  lg:flex-row md:flex-row sm:flex-col">
                 {/** BLOG DETAILS COMPONENT */}
                 <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
@@ -183,7 +183,7 @@ const BlogDetails = () => {
                         ),
                         p: (props) => (
                           <p
-                            className="text-sm font-semibold text-blueGray-200"
+                            className="text-sm font-semibold text-gray-200"
                             {...props}
                           ></p>
                         ),
@@ -206,35 +206,35 @@ const BlogDetails = () => {
 
                 {/** BLOG CATEGORY COMPONENT */}
                 <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky bg-white">
-                  <div className="border border-blueGray-400 border-solid p-4 my-4 ">
+                  <div className="border border-gray-400 border-solid p-4 my-4 ">
                     {" "}
                     <div className="mb-4">
-                      <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200  dark:hover uppercase text-center font-semibold ">
+                      <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold ">
                         newsletter
                       </p>
-                      <div className="border-t bg-blueGray-300 mt-2"></div>
+                      <div className="border-t bg-gray-300 mt-2"></div>
                       {/**email input for newletters */}
                       <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
                         <input
                           type="email"
                           placeholder="Send us your email to receive daily newsletters"
-                          class="px-2 py-1 placeholder-blueGray-300 text-blueGray-600
-                      bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                          class="px-2 py-1 placeholder-gray-300 text-gray-600
+                      bg-white rounded text-sm border border-gray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                           name="email"
                           // value={email}
                           required
                           // onChange={handleChange}?
                         />
-                        <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                        <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
                           <i class="fas fa-envelope"></i>
                         </span>
                       </div>
                     </div>
                     {/**Recent post section */}
                     <div className="mb-4 ">
-                      <div className="border-t bg-blueGray-300 mt-2"></div>
+                      <div className="border-t bg-gray-300 mt-2"></div>
                       <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200  dark:hover uppercase text-center font-semibold mt-2">
+                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
                           recent post
                         </p>
                         {/**Recent post section */}
@@ -245,7 +245,7 @@ const BlogDetails = () => {
                             : "";
                           return (
                             <>
-                              <div className="border-t bg-blueGray-300 mt-2"></div>
+                              <div className="border-t bg-gray-300 mt-2"></div>
                               <div className="flex flex-col  items-center mx-auto">
                                 <h4 className="text-sm uppercase font-semibold  text-lightBlue-400  ">
                                   {title}
@@ -277,14 +277,14 @@ const BlogDetails = () => {
                     {/**Recent post section */}
                     {/**tags and categories section */}
                     <div className="mb-4 ">
-                      <div className="border-t bg-blueGray-300 mt-2"></div>
+                      <div className="border-t bg-gray-300 mt-2"></div>
                       <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-blueGray-200  dark:hover uppercase text-center font-semibold mt-2">
+                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
                           tags and categories
                         </p>
                         {/**Recent post section */}
 
-                        <div className="border-t bg-blueGray-300 mt-2"></div>
+                        <div className="border-t bg-gray-300 mt-2"></div>
                         <div className="flex flex-col  items-center mx-auto">
                           <div className="block mb-2">
                             <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-lightBlue-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">

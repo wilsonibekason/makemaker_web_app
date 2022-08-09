@@ -92,7 +92,7 @@ const ProductDetails = () => {
     <>
       <Navbar Transparent />
 
-      <section className="relative py-20 mt-12 bg-blueGray-900">
+      <section className="relative py-20 mt-12 bg-gray-900">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20 "
           style={{ transform: "translateZ(0)" }}
@@ -161,10 +161,10 @@ const ProductDetails = () => {
                   {"  "}
                   <p className="mb-4 text-sm">(20)</p>
                 </div>
-                <h4 className=" text-blueGray-500 text-sm font-semibold">
+                <h4 className=" text-gray-500 text-sm font-semibold">
                   Description
                 </h4>
-                <p className="mt-4 text-sm leading-relaxed text-blueGray-500">
+                <p className="mt-4 text-sm leading-relaxed text-gray-500">
                   {productDetails ? productDetails?.description : "Description"}
                 </p>
                 <div className="flex flex-wrap">
@@ -182,7 +182,7 @@ const ProductDetails = () => {
                       {productQuantity}
                     </div>
                     <div
-                      className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-blueGray-500"
+                      className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 font-bold text-gray-500"
                       onClick={inQTY}
                     >
                       +
@@ -213,7 +213,7 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500 text-sm">
+                        <h4 className="text-gray-500 text-sm">
                           <span className="uppercase text-red-200">
                             {" "}
                             Date Added
@@ -236,7 +236,7 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500 text-sm">
+                        <h4 className="text-gray-500 text-sm">
                           WHEN TO BUY :{" "}
                           {productDetails
                             ? productDetails?.saleTime
@@ -253,7 +253,7 @@ const ProductDetails = () => {
                         </span>
                       </div>
                       <div>
-                        <h4 className="text-blueGray-500 text-sm">
+                        <h4 className="text-gray-500 text-sm">
                           {ProductDetails?.discount
                             ? ProductDetails?.discount
                             : "No discount for now"}

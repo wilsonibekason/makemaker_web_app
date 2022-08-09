@@ -19,7 +19,7 @@ const ProductDetailsMore = ({ description }) => {
       <div className="flex flex-wrap">
         <div className=" mx-auto w-1/2 mt-16">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row sm:flex-col"
+            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row "
             role="tablist"
           >
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -27,8 +27,8 @@ const ProductDetailsMore = ({ description }) => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 1
-                    ? "text-white bg-lightBlue-600"
-                    : "text-lightBlue-600 bg-white")
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -46,8 +46,8 @@ const ProductDetailsMore = ({ description }) => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
-                    ? "text-white bg-lightBlue-600"
-                    : "text-lightBlue-600 bg-white")
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -65,8 +65,8 @@ const ProductDetailsMore = ({ description }) => {
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 3
-                    ? "text-white bg-lightBlue-600"
-                    : "text-lightBlue-600 bg-white")
+                    ? "text-white bg-blue-600"
+                    : "text-blue-600 bg-white")
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -161,7 +161,7 @@ const ProductDetailsMore = ({ description }) => {
                   {!isReviewCreated ? (
                     <div className="relative flex w-full flex-wrap items-stretch mb-3">
                       <button
-                        className=" border border-lightBlue-500 text-blueGray-600 active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        className=" border border-blue-500 text-blueGray-600 active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
                         onClick={handleReviewSubmit}
                       >
