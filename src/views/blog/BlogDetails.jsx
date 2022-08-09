@@ -318,7 +318,7 @@ const BlogDetails = () => {
               </div>
             </div>
             {/**moreblogs */}
-            <div className="mx-auto my-2">
+            <div className="mx-auto my-4">
               <h2 className="text-3xl md:text-xl lg:text-3xl font-bold text-gray-500 text-center underline">
                 More Posts Like This
               </h2>

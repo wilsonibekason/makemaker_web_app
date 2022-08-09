@@ -23,16 +23,16 @@ export default function Navbar(props) {
               Notus React
             </Link> */}
             <Link
-              to="/"
-              className=" inline-block mr-3 py-0 whitespace-nowrap w-24 px-2"
+              to={"/"}
+              className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
             >
               <img
                 src={reachImg}
                 alt=""
-                className="max-w-full mx-auto p-0 h-auto align-middle my-0 shadow-md  w-72  "
+                className="max-w-full mx-auto p-0 h-auto align-middle my-0 w-32"
               />
-              {/**shadow-md rounded-full max-w-full w-16 mx-auto p-0 bg-white */}
             </Link>
+
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -105,7 +105,10 @@ export default function Navbar(props) {
                   className="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-sm shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >
-                  <i className="fas fa-arrow-alt-circle-right"></i> Get Started
+                  <Link to="/products">
+                    <i className="fas fa-arrow-alt-circle-right"></i> Get
+                    Started
+                  </Link>
                 </button>
               </li>
             </ul>

@@ -21,9 +21,7 @@ export default function Navbar() {
             <img
               src={reachImg}
               alt=""
-              className="max-w-full mx-auto p-0 h-auto align-middle my-0"
-              width={110}
-              height={10}
+              className="max-w-full mx-auto p-0 h-auto align-middle my-0 w-32"
             />
           </Link>
 
