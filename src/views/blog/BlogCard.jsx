@@ -215,6 +215,86 @@ const BlogCard = () => {
         </div>
       </div>
       {/**end of card components */}
+      <div class="container mx-auto px-20">
+        <div style="background-color:rgb(248, 250, 255)">
+          <div
+            class="md:mt-12 flex flex-wrap blue-box relative text-lg p-4"
+            style="cursor: auto;"
+          >
+            <blockquote class="w-full sm:w-1/2 p-6" style="cursor: auto;">
+              <div class="mb-4">
+                <img
+                  srcset=""
+                  src="https://stackdiary.com/140x100.png"
+                  alt="Company Logo"
+                />
+              </div>
+              <p class="mb-4">
+                <span class="text-primary-900">"</span>Metus potenti velit
+                sollicitudin porttitor magnis elit lacinia tempor varius, ut
+                cras orci vitae parturient id nisi vulputate consectetur, primis
+                venenatis cursus tristique malesuada viverra congue risus.
+                <span class="text-primary-900">"</span>
+              </p>
+              <div class="flex items-center">
+                <img
+                  alt="John Doe"
+                  class="w-12 mr-4 rounded-full bg-neutral-500"
+                  src="https://stackdiary.com/140x100.png"
+                />
+                <div class="flex flex-col items-start">
+                  <span class="mb-1 text-sm font-bold">Robert Smith</span>
+                  <a
+                    href="https://stackdiary.com/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="text-sm"
+                  >
+                    {" "}
+                    Facebook{" "}
+                  </a>
+                </div>
+              </div>
+            </blockquote>
+            <blockquote class="w-full sm:w-1/2 p-6" style="cursor: auto;">
+              <div class="mb-4 mt-1">
+                <img
+                  srcset=""
+                  src="https://stackdiary.com/140x100.png"
+                  alt="Company Logo"
+                />
+              </div>
+              <p class="mb-4">
+                <span class="text-primary-900">"</span>Metus potenti velit
+                sollicitudin porttitor magnis elit lacinia tempor varius, ut
+                cras orci vitae parturient id nisi vulputate consectetur, primis
+                venenatis cursus tristique malesuada viverra congue risus.
+                <span class="text-primary-900">"</span>
+              </p>
+              <div class="flex items-center">
+                <img
+                  alt="John Doe"
+                  class="w-12 mr-4 rounded-full bg-neutral-500"
+                  srcset=""
+                  src="https://stackdiary.com/140x100.png"
+                />
+                <div class="flex flex-col items-start">
+                  <span class="mb-1 text-sm font-bold">John Doe</span>
+                  <a
+                    href="https://stackdiary.com/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    class="text-sm"
+                  >
+                    {" "}
+                    Google{" "}
+                  </a>
+                </div>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
