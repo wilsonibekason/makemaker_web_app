@@ -23,8 +23,7 @@ import Footer from "../components/Footers/Footer";
 import { useStateContext } from "../oncontext/OnLandingContext";
 import Context from "../oncontext/OnLandingContext";
 import MotionWrap from "../wrapper/MotionWrap";
-// import Maps from "./admin/Maps";
-// CSS COMPONENTS  DEFINITIONS
+
 const cssComponent = [
   "Buttons",
   "Index",
@@ -136,28 +135,9 @@ const Index = () => {
   const sectionImageURL = aboutContents?.map((item, index) =>
     urlFor(item?.sectionIcons)
   );
-  {
-    /** creating log for strengthContent components */
-  }
-  // defining strengthItems
-  // const strengthItem1 = strengthHREF[2];
-  // const strengthItem2 = strengthHREF[1];
-  // const strengthItem3 = strengthHREF[2];
-  // const strengthItem4 = strengthHREF[3];
 
-  console.log(strengthDesc);
-  console.log(strengthHREF?.forEach((item) => item));
-  console.log(strengthImage);
-  console.log(strengthHREF);
-  console.log(strengthHREF?.length);
-  console.log(strengthHREF?.map((item) => item));
-  console.log(strengthTitle);
-  console.log(strengthTitleIcon);
-  console.log(strengthTopic);
-  console.log(strengthImageCheck);
-  console.log(strengthContent);
   const strengthHREFs = strengthContent[0]?.linkUrl?.map((item, index) => item);
-  console.log(strengthHREFs);
+
   {
     /**fgrr */
   }
@@ -167,25 +147,9 @@ const Index = () => {
   const sectionItem2 = sectionContents[1];
   const sectionItem3 = sectionContents[2];
   const sectionItem4 = sectionContents[3];
-  console.log(strengthContent);
-  // checkbox for inspireContents
-  console.log(inspireContentDesc);
-  console.log(inspireContentImage);
-  console.log(inspireContentTitle);
-  // checkout for reachout Schema
-  console.log(reachDesc);
-  console.log(reachTitle);
-  console.log(reachImg);
-  // checkout for projectSection
-  console.log(productSecTitle);
-  console.log(productSecDesc);
-  console.log(productSecImage);
-  console.log(ImageSecTitle);
+
   const imageSlider = header?.map((item) => item?.imageSlide);
-  console.log(header);
-  console.log(header?.map((item) => item?.imageSlide));
-  console.log(header?.map((item) => item?.imageSlide?.imageItem));
-  console.log(imageSlider?.map((item) => item?.imageItem));
+
   const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (
@@ -199,8 +163,6 @@ const Index = () => {
               <div
                 className={index === current ? showImg : hideImg}
                 style={{
-                  // backgroundImage:
-                  //   "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
                   backgroundImage: `url(${urlFor(headerImage)})`,
                 }}
               >
@@ -405,11 +367,7 @@ const Index = () => {
                 <div className="relative flex flex-col min-w-0 w-full mb-6 mt-48 md:mt-0">
                   <img
                     className=" w-full align-middle rounded-lg absolute shadow-2xl max-w-800-px -left-0-px -top-225-px "
-                    //src={sectionImage}
-                    //src={require("assets/img/pattern_react.png").default}
                     src={sectionImageURL}
-                    // src={urlFor(aboutImageUrl?.sectionIcons)}
-                    //src={sectionImg}
                     alt="..."
                   />
                 </div>
@@ -421,9 +379,6 @@ const Index = () => {
             <div className="items-center flex flex-wrap">
               <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
                 <div className="md:pr-12">
-                  {/* <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                    <i className="fas fa-file-alt text-xl"></i>
-                  </div> */}
                   <h3 className="text-3xl font-semibold">
                     {inspireContentTitle}
                   </h3>
