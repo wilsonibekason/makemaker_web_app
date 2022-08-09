@@ -160,7 +160,7 @@ const BlogDetails = () => {
             </div>
 
             {/** BLOGDETAILS COMPONENT */}
-            <div className="container mx-auto my-4 bg-gray-200">
+            <div className="container mx-auto my-4 dark:bg-gray-800">
               <div className="flex justify-between items-center flex-col  lg:flex-row md:flex-row sm:flex-col">
                 {/** BLOG DETAILS COMPONENT */}
                 <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
@@ -176,24 +176,32 @@ const BlogDetails = () => {
                       content={body}
                       serializers={{
                         h1: (props) => (
-                          <h1 className="text-2xl font-bold my-5" {...props} />
+                          <h1
+                            className="text-2xl font-bold my-5 text-white"
+                            {...props}
+                          />
                         ),
                         h2: (props) => (
-                          <h2 className="text-xl font-bold my-5" {...props} />
+                          <h2
+                            className="text-xl font-bold my-5 text-white"
+                            {...props}
+                          />
                         ),
                         p: (props) => (
                           <p
-                            className="text-sm font-semibold text-gray-200"
+                            className="text-sm font-semibold text-white"
                             {...props}
                           ></p>
                         ),
                         li: ({ children }) => (
-                          <li className="ml-4 list-none">{children}</li>
+                          <li className="ml-4 list-none text-gray-100">
+                            {children}
+                          </li>
                         ),
                         link: ({ href, children }) => (
                           <a
                             href={href}
-                            className="inline-block py-2 text-base leading-7 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover hover:underline "
+                            className="inline-block py-2 text-base leading-7 text-white hover:text-gray-800 dark:text-gray-300 dark:hover hover:underline "
                           >
                             {children}
                           </a>
@@ -205,21 +213,21 @@ const BlogDetails = () => {
                 {/** BLOG DETAILS COMPONENT */}
 
                 {/** BLOG CATEGORY COMPONENT */}
-                <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky bg-white">
+                <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky bg-gray-900 rounded-md">
                   <div className="border border-gray-400 border-solid p-4 my-4 ">
                     {" "}
                     <div className="mb-4">
-                      <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold ">
+                      <p className="text-sm text-gray-900 dark:text-dark dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold ">
                         newsletter
                       </p>
-                      <div className="border-t bg-gray-300 mt-2"></div>
+                      <div className="border-t bg-gray-800 mt-2"></div>
                       {/**email input for newletters */}
                       <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
                         <input
                           type="email"
                           placeholder="Send us your email to receive daily newsletters"
-                          class="px-2 py-1 placeholder-gray-300 text-gray-600
-                      bg-white rounded text-sm border border-gray-300 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
+                          class="px-2 py-1 placeholder-gray-900 text-gray-600
+                      bg-white rounded text-sm border border-gray-800 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                           name="email"
                           // value={email}
                           required
@@ -234,7 +242,7 @@ const BlogDetails = () => {
                     <div className="mb-4 ">
                       <div className="border-t bg-gray-300 mt-2"></div>
                       <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
+                        <p className="text-sm text-gray-900 dark:text-black dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
                           recent post
                         </p>
                         {/**Recent post section */}
@@ -257,29 +265,33 @@ const BlogDetails = () => {
                                     : "no description"}
                                 </p>
                                 <div className="border-t bg-lightBlue-300 mt-2"></div>
-                                <div className="flex mr-4  mb-2">
-                                  <div className="w-1/6 h-4 px-2  font-semibold">
-                                    <p className="text-xs ">{displayDate} </p>
-                                  </div>
-                                  <div className="border-t bg-lightBlue-300 mt-2"></div>
-                                  <div className="w-1/6 h-4 px-2 font-semibold">
-                                    <p className="text-xs">3mins read</p>
-                                  </div>
+                                <div class="flex flex-col md:flex-row lg:flex-row  items-start">
+                                  <span class="mb-1 text-sm font-bold mx-2">
+                                    {displayDate}
+                                  </span>
+                                  <a
+                                    href="https://stackdiary.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer nofollow"
+                                    class="text-sm"
+                                  >
+                                    3mins read
+                                  </a>
                                 </div>
                               </div>
+                              {/**djdjdjddd */}
                             </>
                           );
                         })}
-
-                        {/**Recent post section */}
                       </div>
+                      {/**Recent post section */}
                     </div>
                     {/**Recent post section */}
                     {/**tags and categories section */}
                     <div className="mb-4 ">
                       <div className="border-t bg-gray-300 mt-2"></div>
                       <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
+                        <p className="text-sm text-gray-600 dark:text-black dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
                           tags and categories
                         </p>
                         {/**Recent post section */}
@@ -287,10 +299,10 @@ const BlogDetails = () => {
                         <div className="border-t bg-gray-300 mt-2"></div>
                         <div className="flex flex-col  items-center mx-auto">
                           <div className="block mb-2">
-                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-lightBlue-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
+                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-gray-400 text-white  uppercase last:mr-0 mr-2 ml-2 mt-2">
                               hdhhd
                             </span>
-                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-lightBlue-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
+                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-gray-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
                               hdhhd
                             </span>
                           </div>
