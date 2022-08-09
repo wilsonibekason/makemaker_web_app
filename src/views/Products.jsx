@@ -3,6 +3,7 @@ import Navbar from "../components/Navbars/AdminNavbar";
 import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import Footer from "../components/Footers/Footer";
 import { urlFor } from "../client";
 import ProductItem from "./ProductItem";
