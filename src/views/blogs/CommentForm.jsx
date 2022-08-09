@@ -112,6 +112,9 @@ const CommentForm = () => {
               </div>
               {/** comments section with a minimum length of three  */}
               <Comments />
+              <Comments />
+              <Comments />
+              <Comments />
 
               {/** comments section with a minimum length of three  */}
             </div>
