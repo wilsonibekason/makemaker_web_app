@@ -15,7 +15,7 @@ import { useStateContext } from "../../oncontext/OnLandingContext";
 import Footer from "../../components/Footers/Footer";
 import { CommentForm } from "../../views/blogs";
 import PortableText from "react-portable-text";
-
+import MoreBlogs from "./MoreBlogs";
 const BlogDetails = () => {
   const {
     blogAuthor,
@@ -305,6 +305,17 @@ const BlogDetails = () => {
                 {/** BLOG CATEGORY COMPONENT */}
               </div>
             </div>
+            {/**moreblogs */}
+            <div className="mt-4 bg-gray-400 px-4 py-4 flex">
+              <div className="flex-col lg:flex-row">
+                <h2 className="text-lg lg:text-2xl md:text-xl font-bold text-white text-center letter-spacing my-2">
+                  More blogs like this{" "}
+                </h2>
+                <MoreBlogs />
+                <MoreBlogs />
+              </div>
+            </div>
+            {/**moreblogs */}
             {/* <CommentForm /> */}
             <CommentForm />
           </>
