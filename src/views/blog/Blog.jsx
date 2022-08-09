@@ -63,7 +63,7 @@ const Blog = () => {
                 <h1 className="text-white font-bold text-4xl">
                   Makemaker Blogs
                 </h1>
-                <p className="mt-4 text-sm text-blueGray-200">
+                <p className="mt-4 text-sm text-gray-200 font-semibold">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Aspernatur fugit rerum nemo expedita omnis eligendi tenetur
                   cum commodi porro ea?
@@ -148,10 +148,9 @@ const Blog = () => {
                   const displayDate = publishedAt
                     ? moment(publishedAt).utc().format("YYYY-MM-DD")
                     : "";
-                  const desc =
-                    description === "undefined"
-                      ? `${description?.slice(0, 10)}..`
-                      : "description";
+                  const desc = description
+                    ? `${description?.slice(0, 20)}..`
+                    : "description";
                   return (
                     <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                       <Link to={`/blogpost/${_id}`}>
@@ -159,9 +158,9 @@ const Blog = () => {
                         <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-xl rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
                           <img
                             alt="..."
-                            src={urlFor(mainImage)}
+                            src={urlFor(mainImage).url()}
                             //src="https://www.emergingedtech.com/wp/wp-content/uploads/2018/04/blogging.jpg"
-                            className="w-full align-middle rounded-t-lg"
+                            className=" align-middle rounded-t-lg object-cover object-center w-full h-72 bg-coolGray-500"
                           />
                           <blockquote className="relative p-8 mb-4">
                             <svg
