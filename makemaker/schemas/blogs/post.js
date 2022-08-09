@@ -42,7 +42,7 @@ export default {
     //   title: "Categories",
     //   type: "array",
     //   of: [{ type: "reference", to: { type: "categorys" } }],
-    // },ray
+    // },ray@sanity/client": "^3.2.0",
     {
       name: "tags",
       title: "Tags",
