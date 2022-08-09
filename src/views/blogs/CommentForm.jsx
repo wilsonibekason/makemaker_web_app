@@ -111,14 +111,16 @@ const CommentForm = () => {
                 )}
               </div>
               {/** comments section with a minimum length of three  */}
-              <Comments />
-              <Comments />
-              <Comments />
-              <Comments />
 
               {/** comments section with a minimum length of three  */}
             </div>
           </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3  px-2">
+          <Comments />
+          <Comments />
+          <Comments />
+          <Comments />
         </div>
       </section>
     </>
