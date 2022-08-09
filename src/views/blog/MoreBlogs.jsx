@@ -3,7 +3,7 @@ const MoreBlogs = () => {
     <>
       {/**start of card component */}
       <div
-        class="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800"
+        class="max-w-xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800"
         style={{ cursor: "auto" }}
       >
         <div class="flex items-center justify-between">
