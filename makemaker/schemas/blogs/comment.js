@@ -8,5 +8,10 @@ export default {
       title: "Posted By",
       type: "postedBY",
     },
+    {
+      name: "message",
+      title: "Message",
+      type: "text",
+    },
   ],
 };

@@ -12,7 +12,7 @@ const Comments = () => {
             Jan 15, 2022
           </span>
           <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-            JavaScript
+            wilson ibekason
           </a>
         </div>
         <div class="mt-2">

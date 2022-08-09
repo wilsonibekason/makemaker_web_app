@@ -37,6 +37,20 @@ export default {
       },
     },
     {
+      name: "title",
+      title: "Blog Title",
+      type: "text",
+      display: {
+        placeholder: "Enter Your Comment Title",
+        rules: [
+          {
+            required: true,
+            message: "Please enter the title of your comment",
+          },
+        ],
+      },
+    },
+    {
       name: "message",
       title: "Message",
       type: "string",
