@@ -20,12 +20,13 @@ export const BlogContextProvider = ({ children }) => {
   const [animateFilter, setAnimateFilter] = useState("all");
   const [formData, setFormData] = useState({
     fullName: "",
-    message: "",
     email: "",
+    title: "",
+    message: "",
   });
 
   //destructure formData Input
-  const { fullName, message, email } = formData;
+  const { fullName, message, email, title } = formData;
   // handkeChange for blog comment
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -36,13 +37,14 @@ export const BlogContextProvider = ({ children }) => {
     setLoading(true);
     setIsError(null);
     setIsCommented(true);
-    if (!fullName || !email || !message) {
+    if (!fullName || !email || !message || !title) {
       setIsError(true);
     }
     const contacted = {
       _type: "blogComments",
       fullName,
       email,
+      title,
       message,
     };
 
@@ -123,6 +125,7 @@ export const BlogContextProvider = ({ children }) => {
         fullName,
         email,
         message,
+        title,
         isCommented,
         handleBlogFilter,
 

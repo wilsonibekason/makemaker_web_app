@@ -10,6 +10,7 @@ const CommentForm = () => {
     setIsError,
     fullName,
     email,
+    title,
     message,
     isCommented,
     loading,
@@ -86,7 +87,7 @@ const CommentForm = () => {
                             placeholder="Enter the title of your comment"
                             required
                             name="name"
-                            value={fullName}
+                            value={title}
                             onChange={handleChange}
                           />
                         </div>
