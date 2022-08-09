@@ -130,7 +130,7 @@ const Blog = () => {
       {/**FEATUREDPOST SECTION */}
       {/**BLOGS SECTION */}
       {/** add products for makeMaker */}
-      <section className="block relative z-1 bg-blueGray-600 ">
+      <section className="block relative z-1 bg-blue-400 ">
         <div className="container mx-auto">
           <div className="justify-center flex flex-wrap md:flex-col">
             <div className="w-full lg:w-12/12 px-4 mt-24 mb-24">
@@ -156,7 +156,7 @@ const Blog = () => {
                     <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
                       <Link to={`/blogpost/${_id}`}>
                         {/* <Link to={`/blogpost/${slug?.current}`}> */}
-                        <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
+                        <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-xl rounded-lg bg-lightBlue-500 ease-linear transition-all duration-150">
                           <img
                             alt="..."
                             src={urlFor(mainImage)}
@@ -172,7 +172,7 @@ const Blog = () => {
                             >
                               <polygon
                                 points="-30,95 583,95 583,65"
-                                className="text-lightBlue-500 fill-current"
+                                className="text-white fill-current"
                               ></polygon>
                             </svg>
                             <div className="flex justify-between sm:flex-row lg:flex md:flex-row mx:mx-auto mx-auto">

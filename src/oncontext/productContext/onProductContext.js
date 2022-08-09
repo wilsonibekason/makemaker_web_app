@@ -89,7 +89,7 @@ export const ProductProvider = ({ children }) => {
   // FILTER BUTTON ACTIONS
 
   const activeFilterBtn =
-    "hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blueGray-200 uppercase last:mr-0 mr-2 mt-4";
+    "hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-blue-200 uppercase last:mr-0 mr-2 mt-4";
   const inActiveFilterBtn =
     "hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-red-200 uppercase last:mr-0 mr-2 mt-4 ";
 
