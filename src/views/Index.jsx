@@ -3,7 +3,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "@sefailyasoz/react-carousel";
-
+import { motion } from "framer-motion";
 // create import for external dependencies
 
 /**
@@ -150,7 +150,7 @@ const Index = () => {
 
   const imageSlider = header?.map((item) => item?.imageSlide);
 
-  const showImg = "absolute top-0 w-full h-full bg-center bg-cover";
+  const showImg = "absolute top-0 w-full h-full bg-center bg-cover bg-red-500";
   const hideImg = "absolute top-0 w-full h-full bg-center bg-cover hidden";
   return (
     <>
