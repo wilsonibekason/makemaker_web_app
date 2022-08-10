@@ -1,6 +1,9 @@
 import React from "react";
+import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 
 const Comments = () => {
+  const { blogComments } = useStateBlogContext();
+  console.log(blogComments);
   return (
     <>
       <div

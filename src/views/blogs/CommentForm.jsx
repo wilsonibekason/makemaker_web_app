@@ -15,13 +15,13 @@ const CommentForm = () => {
     isCommented,
     BlogDetails,
     loading,
+    blogComment,
     moreBlogs,
   } = useStateBlogContext();
   const authorName = BlogDetails?.map((item) => item?.author.name);
   console.log(authorName);
   // const { name } = author;
-  // console.log(author.map((item) => item.name));
-
+  console.log(blogComment);
   return (
     <>
       <section className="relative block py-24 lg:pt-0 bg-gray-800">

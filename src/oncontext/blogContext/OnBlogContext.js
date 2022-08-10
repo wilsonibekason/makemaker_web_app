@@ -1,6 +1,6 @@
 import { client } from "../../client";
 import { useState, useEffect, useContext, createContext } from "react";
-import { postBlogQuery } from "../../utils/data";
+import { postBlogQuery, blogComments } from "../../utils/data";
 
 const BlogContext = createContext({});
 
@@ -18,6 +18,7 @@ export const BlogContextProvider = ({ children }) => {
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterBlogs, setFilterBlogs] = useState([]);
   const [animateFilter, setAnimateFilter] = useState("all");
+  const [blogComment, setBlogComments] = useState([]);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -92,7 +93,16 @@ export const BlogContextProvider = ({ children }) => {
     };
     setFormData(initialFormData);
   }, []);
-
+  ///
+  useEffect(() => {
+    client
+      .fetch(blogComments)
+      .then((data) => {
+        setBlogComments(data);
+        console.log(data);
+      })
+      .catch((error) => console.log(error?.response?.body?.error?.description));
+  }, []);
   /////
   ////////////////
   const handleBlogFilter = (blogItem) => {
@@ -138,7 +148,7 @@ export const BlogContextProvider = ({ children }) => {
         title,
         isCommented,
         handleBlogFilter,
-
+        blogComment,
         animateFilter,
         animateCard,
       }}
