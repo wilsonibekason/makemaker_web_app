@@ -42,7 +42,7 @@ const ProductDetails = () => {
   const items = renderMoreProductsItems1?.concat(renderMoreProductsItems2);
   ///////////////
   // DEFINE STATES
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState();
   const [productDetailsMore, setProductDetailsMore] = useState();
@@ -68,6 +68,7 @@ const ProductDetails = () => {
               .then((data) => {
                 setProducts(data);
                 console.log(data[0]);
+                console.log(data);
               })
               .catch((error) => {
                 console.log("====================================");
@@ -309,24 +310,25 @@ const ProductDetails = () => {
           </div>
         </div>
         {/**   other products components  */}
-        {/* {products.length >= 1 ? (
+        {products.length >= 1 ? (
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-16 mx-4">
-            {products?.length >= 1 &&
+            {products &&
               products?.map((product, index) => {
                 const { title, image, description, publishedAt, price, _id } =
                   product;
+                console.log(title);
                 return (
-                  // <ProductMoreCard
-                  //   title={title}
-                  //   image={image}
-                  //   publishedAt={publishedAt}
-                  //   description={description}
-                  //   price={price}
-                  //   key={index}
-                  //   product={product}
-                  //   id={_id}
-                  // />
-                  <h1>helllo</h1>
+                  <ProductMoreCard
+                    title={title}
+                    image={image}
+                    publishedAt={publishedAt}
+                    description={description}
+                    price={price}
+                    myKey={index}
+                    key={index}
+                    product={product}
+                    id={_id}
+                  />
                 );
               })}
           </div>
@@ -338,7 +340,7 @@ const ProductDetails = () => {
               </h1>
             </div>
           </>
-        )} */}
+        )}
       </section>
 
       <Footer />
