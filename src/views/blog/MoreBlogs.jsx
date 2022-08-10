@@ -48,12 +48,13 @@ const MoreBlogs = ({
           </a>
           <div class="flex items-center">
             <img
-              src="https://stackdiary.com/140x100.png"
+              //src="https://stackdiary.com/140x100.png"
+              src={urlFor(image)}
               alt="Author Photo"
               class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
             />
             <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
-              John Doe
+              {name}
             </a>
           </div>
         </div>
