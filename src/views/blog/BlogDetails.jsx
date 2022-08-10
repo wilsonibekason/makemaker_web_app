@@ -323,10 +323,45 @@ const BlogDetails = () => {
                 More Posts Like This
               </h2>
             </div>
+            {moreBlogs?.length >= 1 ? (
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">
+                  {recentBlogs?.length &&
+                    recentBlogs?.map((blog, index) => {
+                      const {
+                        author,
+                        title,
+                        _id,
+                        name,
+                        mainImage,
+                        description,
+                        publishedAt,
+                      } = blog;
+                      return (
+                        <>
+                          <MoreBlogs
+                            author={author}
+                            title={title}
+                            id={_id}
+                            mainImage={mainImage}
+                            desc={description}
+                            publishedAt={publishedAt}
+                          />
+                        </>
+                      );
+                    })}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="w-3/4  lg:w-1/2 mx-auto mt-16">
+                  <h1 className="text-md md:text-xl lg:text-2xl font-bold uppercase text-white text-center">
+                    No related products for now
+                  </h1>
+                </div>
+              </>
+            )}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">
-              <MoreBlogs />
-              <MoreBlogs />
-              <MoreBlogs />
               <MoreBlogs />
             </div>
             {/**moreblogs */}

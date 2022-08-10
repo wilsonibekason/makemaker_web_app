@@ -1,4 +1,8 @@
-const MoreBlogs = () => {
+import { urlFor } from "../../client";
+import moment from "moment";
+
+const MoreBlogs = ({ title, desc, author, id, mainImage, publishedAt }) => {
+  // const { name, image } = author;
   return (
     <>
       {/**start of card component */}
@@ -8,10 +12,10 @@ const MoreBlogs = () => {
       >
         <div class="flex items-center justify-between">
           <span class="text-sm font-light text-gray-600 dark:text-gray-400">
-            Jan 15, 2022
+            {moment(publishedAt).format("MMM DD, YYYY")}
           </span>
           <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-            JavaScript
+            {title}
           </a>
         </div>
         <div class="mt-2">
