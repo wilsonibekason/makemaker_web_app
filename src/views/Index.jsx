@@ -159,7 +159,7 @@ const Index = () => {
         {header?.map((item, index) => {
           const { headerImage, description, title, imageSlide } = item;
           return (
-            <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+            <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-min">
               <div
                 className={index === current ? showImg : hideImg}
                 style={{
