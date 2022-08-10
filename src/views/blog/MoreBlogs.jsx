@@ -1,6 +1,6 @@
 import { urlFor } from "../../client";
 import moment from "moment";
-
+import { useNavigate } from "react-router-dom";
 const MoreBlogs = ({
   title,
   desc,
@@ -10,8 +10,10 @@ const MoreBlogs = ({
   publishedAt,
   more,
 }) => {
-  // const { name, image } = author;
+  const { name, image } = author;
   console.log("morproducts: " + more);
+  const navigate = useNavigate();
+
   return (
     <>
       {/**start of card component */}
@@ -24,7 +26,7 @@ const MoreBlogs = ({
             {moment(publishedAt).format("MMM DD, YYYY")}
           </span>
           <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-            {id}
+            {title}
           </a>
         </div>
         <div class="mt-2">
@@ -32,17 +34,16 @@ const MoreBlogs = ({
             href="https://stackdiary.com/"
             class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
           >
-            How to sanitiz array() in JS
+            {title}
           </a>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">
-            Dui urna vehicula tincidunt pretium consequat luctus mi, platea
-            fermentum conubia tempus ac orci. Pellentesque dictum malesuada
-            cubilia faucibus dignissim mi nascetur senectus, augue ad libero
-            efficitur dolor duis lobortis, non etiam sociosqu.
-          </p>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">{desc}</p>
         </div>
         <div class="flex items-center justify-between mt-4">
-          <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline">
+          <a
+            href="#"
+            class="text-blue-600 dark:text-blue-400 hover:underline"
+            onClick={() => navigate(`/blogpost/${id}`, { replace: true })}
+          >
             Read more ⟶
           </a>
           <div class="flex items-center">

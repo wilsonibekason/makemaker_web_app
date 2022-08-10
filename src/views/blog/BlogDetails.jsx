@@ -323,11 +323,11 @@ const BlogDetails = () => {
                 More Posts Like This
               </h2>
             </div>
-            {moreBlogs?.length >= 1 ? (
+            {moreBlogs || moreBlogs?.length >= 1 ? (
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">
-                  {recentBlogs?.length &&
-                    recentBlogs?.map((blog, index) => {
+                  {moreBlogs?.length &&
+                    moreBlogs?.map((blog, index) => {
                       const {
                         author,
                         title,
@@ -362,9 +362,7 @@ const BlogDetails = () => {
                 </div>
               </>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">
-              <MoreBlogs />
-            </div>
+
             {/**moreblogs */}
             {/* <CommentForm /> */}
             <CommentForm />
