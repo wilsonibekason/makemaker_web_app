@@ -1,19 +1,49 @@
 import React, { useState } from "react";
-
-function Cart() {
+import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
+import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
+function CartModal({
+  popoverDropdownRef,
+  dropdownPopoverShow,
+  openDropdownPopover,
+  closeDropdownPopover,
+  btnDropdownRef,
+}) {
+  const {
+    AiOutlineLeft,
+    AiOutlineShopping,
+    AiOutlineRight,
+    AiOutlinePlus,
+    AiOutlineMinus,
+    TiDeleteOutline,
+  } = useStateContextProduct();
+  const {
+    increaseQuantity,
+    decreQuantity,
+    onRemove,
+    decreaseQuantity,
+    inQTY,
+    onAdd,
+    productQuantity,
+    totalQuantities,
+    totalPrice,
+    toggleCartItemsQuantities,
+    showCart,
+    cartItems,
+    setShowCart,
+  } = useStateContextEcom();
   const [show, setShow] = useState(false);
   return (
     <>
       <div>
-        <div className="flex items-center justify-center py-8">
+        {/* <div className="flex items-center justify-center py-8">
           <button
             onClick={() => setShow(!show)}
             className="py-2 px-10 rounded bg-indigo-600 hover:bg-indigo-700 text-white"
           >
             Open Modal
           </button>
-        </div>
-        {show && (
+        </div> */}
+        {cartItems?.length >= 1 && (
           <div
             className="w-full h-full bg-black bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0"
             id="chec-div"
@@ -29,7 +59,13 @@ function Cart() {
                 >
                   <div
                     className="flex items-center text-gray-500 hover:text-gray-600 cursor-pointer"
-                    onClick={() => setShow(!show)}
+                    ref={btnDropdownRef}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dropdownPopoverShow
+                        ? closeDropdownPopover()
+                        : openDropdownPopover();
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -266,4 +302,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CartModal;
