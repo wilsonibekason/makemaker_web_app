@@ -44,10 +44,10 @@ const Cart = ({
         className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
-        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150 ">
+        <div className="w-3/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150 ">
           <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
-              className="flex center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
+              className="flex flex-wrap center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
               ref={btnDropdownRef}
               onClick={(e) => {
                 e.preventDefault();
@@ -57,10 +57,10 @@ const Cart = ({
               }}
             >
               <AiOutlineRight size={30} />
-              <span className="ml-2 font-base text-xl sm:text-sm md:text-md">
+              <span className="ml-2 font-base text-sm md:text-md lg:text-xl">
                 Your Cart
               </span>
-              <span className="ml-2 text-gray-600 text-xl sm:text-sm md:text-md">
+              <span className="ml-2 text-gray-600 text-sm md:text-md lg:text-xl">
                 {totalQuantities}
               </span>
             </button>
@@ -68,19 +68,38 @@ const Cart = ({
             {/** render the empty cart content */}
 
             {cartItems?.length < 1 && (
-              <div className="m-24 text-center align-center">
-                <div className="pl-16 ">
-                  <AiOutlineShopping size={150} className="" />
+              <>
+                <div className="flex flex-col mt-4">
+                  <div className=" mx-auto">
+                    <AiOutlineShopping size={150} className="" />
+                  </div>
+                  <div className="w-3/6 text-center mx-auto">
+                    <h3 className=" font-bold text-sm">
+                      Your Shopping Cart Is Empty
+                    </h3>
+                  </div>
+                  <div className="flex mx-auto items-end">
+                    <Link to={"/products"}>
+                      <button className=" w-full max-w-screen-2xl hover:max-w-prose px-4 py-2 rounded-full border-none text-sm  uppercase bg-blue-500 hover:bg-blue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12 shadow-lg">
+                        Continue Shopping
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="font-bold text-sm">
-                  Your Shopping Cart Is Empty
-                </h3>
-                <Link to={"/products"}>
-                  <button className="w-full max-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-sm mx-12 uppercase bg-lightBlue-500 hover:bg-lightBlue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
-                    Continue Shopping
-                  </button>
-                </Link>
-              </div>
+                {/* <div className="m-24 text-center align-center">
+                  <div className="pl-16 ">
+                    <AiOutlineShopping size={150} className="" />
+                  </div>
+                  <h3 className=" w-16 font-bold text-sm">
+                    Your Shopping Cart Is Empty
+                  </h3>
+                  <Link to={"/products"}>
+                    <button className="w-full max-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-sm mx-12 uppercase bg-blue-500 hover:bg-blue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
+                      Continue Shopping
+                    </button>
+                  </Link>
+                </div> */}
+              </>
             )}
             {/** render the empty cart content */}
             {/**container */}
@@ -96,7 +115,7 @@ const Cart = ({
                             <div className="w-full sm:w-4/12 p-4 bg-blueGray-500">
                               {/**CARTiMAGE */}
                               <img
-                                className=" max-w-100-px rounded-lg bg-lightBlue-400 shadow-xl"
+                                className=" max-w-100-px rounded-lg bg-blue-400 shadow-xl"
                                 src={urlFor(cartItem?.image)}
                                 alt="Shopping Cart"
                               />
@@ -169,7 +188,7 @@ const Cart = ({
                       </div>
                       <div className="w-40 m-auto ">
                         <button
-                          className=" w-1/2 text-lightBlue-500  bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          className=" w-1/2 text-blue-500  bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                           type="button"
                         >
                           pay with stripe
