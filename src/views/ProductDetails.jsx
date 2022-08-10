@@ -46,7 +46,6 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState();
   const [productDetailsMore, setProductDetailsMore] = useState();
-
   const [error, setError] = useState(null);
 
   // DEFINE STATES
