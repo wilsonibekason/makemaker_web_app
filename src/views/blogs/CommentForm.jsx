@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { Comments } from ".";
 import { useStateBlogContext } from "../../oncontext/blogContext/OnBlogContext";
 
@@ -157,10 +158,20 @@ const CommentForm = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3  px-2">
-          <Comments />
-          <Comments />
-          <Comments />
-          <Comments />
+          {blogComment?.map((blogItem, index) => {
+            const { fullName, email, title, message, _createdAt, _updatedAt } =
+              blogItem;
+            const createdAt = moment(_createdAt).utc().format("YYYY-MM-DD");
+            return (
+              <Comments
+                createdAt={createdAt}
+                fullName={fullName}
+                title={title}
+                message={message}
+                key={index}
+              />
+            );
+          })}
         </div>
       </section>
     </>

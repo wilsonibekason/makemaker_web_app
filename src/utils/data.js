@@ -133,15 +133,14 @@ export const tagsCategories = (blogId) => {
 };
 
 // initialsing blogcomments
-export const blogComments = () => {
-  const query = `*[_type == "blogComments"]{
+export const blogComments = `*[_type == "blogComments"]{
     fullName,
     email,
     title,
-    message
+    message,
+    _updatedAt,
+    _createdAt,
   }`;
-  return query;
-};
 // initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
