@@ -109,131 +109,89 @@ const Cart = ({
               {cartItems?.length >= 1 && (
                 <>
                   {/** */}
-                  <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
-                    <div className="w-1/4">
-                      <img
-                        src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
-                        alt
-                        className="w-full h-full object-center object-cover"
-                      />
-                    </div>
-                    <div className="md:pl-3 md:w-3/4">
-                      {/* <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
+                  {cartItems.map((cartItem, index) => {
+                    const { title, description, _id, quantity, image, price } =
+                      cartItem;
+                    return (
+                      <>
+                        <div
+                          className="md:flex items-center mt-14 py-8 border-t border-gray-200"
+                          key={index}
+                        >
+                          <div className="w-1/4">
+                            <img
+                              // src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
+                              src={urlFor(image)}
+                              alt
+                              className="w-full h-full object-center object-cover"
+                            />
+                          </div>
+                          <div className="md:pl-3 md:w-3/4">
+                            {/* <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
                         RF293
                       </p> */}
-                      <div className="flex items-center justify-between w-full pt-1">
-                        <p className="text-base font-black leading-none text-gray-800">
-                          North wolf bag
-                        </p>
-                        {/* <select className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
+                            <div className="flex items-center justify-between w-full pt-1">
+                              <p className="text-base font-black leading-none text-gray-800">
+                                {title}
+                              </p>
+                              {/* <select className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
                           <option>01</option>
                           <option>02</option>
                           <option>03</option>
                         </select> */}
-                        <div className="flex-col mt-8">
-                          <BsFillArrowDownCircleFill
-                            size={20}
-                            className="mx-auto"
-                          />
-                          <span className="font-bold text-center ml-1">1</span>
-                          <BsFillArrowUpCircleFill
-                            size={20}
-                            className="mx-auto"
-                          />
-                        </div>
-                      </div>
-                      <p className="text-xs leading-3 text-gray-600 pt-2">
-                        Height: 10 inches
-                      </p>
-                      <p className="text-xs leading-3 text-gray-600 py-4">
-                        Color: Black
-                      </p>
-                      <p className="w-96 text-xs leading-3 text-gray-600">
-                        Composition: 100% calf leather
-                      </p>
-                      <div className="flex items-center justify-between pt-5 pr-6">
-                        <div className="flex itemms-center">
-                          <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
-                            Add to favorites
-                          </p>
-                          <p className="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">
-                            Remove
-                          </p>
-                        </div>
-                        <p className="text-base font-black leading-none text-gray-800">
-                          $9,000
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {/** */}
-                  <div className="container px-4 mx-auto mt-12">
-                    {cartItems?.map((cartItem, index) => {
-                      // const { image } = cartItem;
-                      return (
-                        <div className="flex justify-between" key={index}>
-                          <div className="w-1/3 px-4">
-                            <div className="w-full sm:w-4/12 p-4 bg-blueGray-500">
-                              {/**CARTiMAGE */}
-                              <img
-                                className=" max-w-100-px rounded-lg bg-blue-400 shadow-xl"
-                                src={urlFor(cartItem?.image)}
-                                alt="Shopping Cart"
-                              />
-                            </div>
-                          </div>
-                          <div className="flex flex-col">
-                            <div className="flex">
-                              <div
-                                className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md  my-4 py-3 text-lg"
-                                onClick={() =>
-                                  toggleCartItemsQuantities(
-                                    cartItem?._id,
-                                    "increase"
-                                  )
-                                }
-                              >
-                                <AiOutlinePlus />
-                              </div>
-                              <div className="w-1/6 bg-gray-500 h-12 px-4 border border-solid font-bold  shadow-md my-4 py-3 text-lg">
-                                <span className="my-4 text-blueGray-600">
-                                  {cartItem?.quantity}
+                              <div className="flex-col mt-8">
+                                <BsFillArrowDownCircleFill
+                                  size={20}
+                                  className="mx-auto"
+                                  onClick={() =>
+                                    toggleCartItemsQuantities(_id, "decrease")
+                                  }
+                                />
+                                <span className="font-bold text-center ml-1">
+                                  {quantity}
                                 </span>
-                              </div>
-                              <div
-                                className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-4 py-3 text-lg"
-                                onClick={() =>
-                                  toggleCartItemsQuantities(
-                                    cartItem?._id,
-                                    "decrease"
-                                  )
-                                }
-                              >
-                                <AiOutlineMinus />
+                                <BsFillArrowUpCircleFill
+                                  size={20}
+                                  className="mx-auto"
+                                  onClick={() =>
+                                    toggleCartItemsQuantities(_id, "increase")
+                                  }
+                                />
                               </div>
                             </div>
-                            <div className="flex mx-auto">
-                              <h1 className="text-blueGray-400 font-semibold uppercase">
-                                {cartItem?.title && cartItem?.title}
-                              </h1>
-                            </div>
-                          </div>
-
-                          <div className=" flex flex-col px-4 ml-16">
-                            <div className="w-1/6 bg-gray-400 h-12 px-4 border border-solid  shadow-md my-1 py-3 rounded-tr-full text-center">
-                              {cartItem?.quantity}
-                            </div>
-                            <div
-                              className="w-1/6 bg-gray-500 h-12 px-4 border border-solid  shadow-xl my-1 py-3 rounded-tr-full text-2xl"
-                              onClick={() => onRemove(cartItem)}
-                            >
-                              <TiDeleteOutline />
+                            <p className="text-xs leading-3 text-gray-600 pt-2">
+                              Height: 10 inches
+                            </p>
+                            <p className="text-xs leading-3 text-gray-600 py-4">
+                              Color: Black
+                            </p>
+                            <p className="w-96 text-xs leading-3 text-gray-600">
+                              Composition: 100% calf leather
+                            </p>
+                            <div className="flex items-center justify-between pt-5 pr-6">
+                              <div className="flex itemms-center">
+                                <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
+                                  Add to favorites
+                                </p>
+                                <p
+                                  className="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer"
+                                  onClick={() => onRemove(cartItem)}
+                                >
+                                  Remove
+                                </p>
+                              </div>
+                              <p className="text-base font-black leading-none text-gray-800">
+                                {`$${price}`}
+                              </p>
                             </div>
                           </div>
                         </div>
-                      );
-                    })}
-                  </div>
+                      </>
+                    );
+                  })}
+
+                  {/** */}
+
                   {/**container */}
 
                   {/** cart bottom */}
