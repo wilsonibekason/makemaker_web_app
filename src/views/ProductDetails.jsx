@@ -89,7 +89,8 @@ const ProductDetails = () => {
     fetchProductDetails();
   }, [productId]);
 
-  console.log(products);
+  // destructuring for related products
+  const { publishedAt, title, image, description } = products;
   return (
     <>
       <Navbar Transparent />
@@ -305,7 +306,7 @@ const ProductDetails = () => {
             </h3>
           </div>
         </div>
-
+             <di
         {/**   other products components  */}
       </section>
 
