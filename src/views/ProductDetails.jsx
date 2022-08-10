@@ -156,14 +156,15 @@ const ProductDetails = () => {
                 <h1 className=" text-2xl font-bold">
                   {productDetails ? productDetails?.title : "Title"}
                 </h1>
-                <div className="text-Amber-400 mt-4 flex gap-2 align-center">
+                <div className="flex items-center mt-2.5 mb-5">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
-                  {"  "}
-                  <p className="mb-4 text-sm">(20)</p>
+                  <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+                    5.0
+                  </span>
                 </div>
                 <h4 className=" text-gray-500 text-sm font-semibold">
                   Description
@@ -308,26 +309,35 @@ const ProductDetails = () => {
           </div>
         </div>
         {/**   other products components  */}
-
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {products?.length >= 1 &&
-            products?.map((product, index) => {
-              const { title, image, description, publishedAt, price, _id } =
-                product;
-              return (
-                <ProductMoreCard
-                  title={title}
-                  image={image}
-                  publishedAt={publishedAt}
-                  description={description}
-                  price={price}
-                  key={index}
-                  product={product}
-                  id={_id}
-                />
-              );
-            })}
-        </div>
+        {products.length >= 1 ? (
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-16 mx-4">
+            {products?.length >= 1 &&
+              products?.map((product, index) => {
+                const { title, image, description, publishedAt, price, _id } =
+                  product;
+                return (
+                  <ProductMoreCard
+                    title={title}
+                    image={image}
+                    publishedAt={publishedAt}
+                    description={description}
+                    price={price}
+                    key={index}
+                    product={product}
+                    id={_id}
+                  />
+                );
+              })}
+          </div>
+        ) : (
+          <>
+            <div className="w-3/4  lg:w-1/2 mx-auto mt-16">
+              <h1 className="text-md md:text-xl lg:text-2xl font-bold uppercase text-white text-center">
+                No related products for now
+              </h1>
+            </div>
+          </>
+        )}
       </section>
 
       <Footer />
