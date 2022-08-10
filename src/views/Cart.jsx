@@ -43,12 +43,10 @@ const Cart = ({
   return (
     <>
       <main
-        className={` ${
-          dropdownPopoverShow ? "block" : "hidden"
-        } bg-gray-100 w-full h-full bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0`}
+        className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
-        <div className="  md:w-6/12 lg:w-4/12  bg-blueGray-400 sticky-0  top-0  overflow-y-auto w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700">
+        <div className="w-full md:w-6/12 lg:w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100  overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700 ">
           <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
               className="flex flex-wrap center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
@@ -178,8 +176,8 @@ const Cart = ({
                   {/** cart bottom */}
                   {cartItems?.length >= 1 && (
                     <>
-                      <div className="absolute bottom-0 right-2  w-full h-full text-center my-4">
-                        <div className="flex justify-between  flex-col md:h-screen px-14 py-20  overflow-y-auto">
+                      <div className="absolute bottom-0 right-2  w-full p-16 text-center my-4">
+                        <div className="flex justify-between">
                           <h3 className="text-md sm:text-sm text-blueGray-900 font-bold">
                             Subtotal
                           </h3>
