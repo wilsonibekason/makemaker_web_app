@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 w-full h-16 z-10 bg-gray-700 md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
+      <nav className="sticky top-0 left-0 w-full h-16 z-10 bg-gray-700 md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
         <div className="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
           {/* Brand */}
           <Link

@@ -16,13 +16,13 @@ const ProductDetailsMore = ({ description }) => {
 
   return (
     <>
-      <div className="flex flex-wrap">
-        <div className=" mx-auto w-1/2 mt-16">
+      <div className="flex flex-wrap ">
+        <div className=" mx-auto w-full md:w-1/2 lg:w-1/2 mt-16">
           <ul
-            className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row "
+            className="flex mb-0 list-none  pt-3 pb-4 flex-row "
             role="tablist"
           >
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center w-40">
               <a
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -41,10 +41,10 @@ const ProductDetailsMore = ({ description }) => {
                 description
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center w-36 lg:w-40 md:w-40">
               <a
                 className={
-                  "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  " text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
                     ? "text-white bg-blue-600"
                     : "text-blue-600 bg-white")
@@ -60,7 +60,7 @@ const ProductDetailsMore = ({ description }) => {
                 additional information
               </a>
             </li>
-            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            <li className="-mb-px mr-2 last:mr-0 flex-auto text-center w-40">
               <a
                 className={
                   "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
@@ -77,7 +77,7 @@ const ProductDetailsMore = ({ description }) => {
                 role="tablist"
               >
                 reviews{" "}
-                <span className="text-teal-400 font-semibold"> (0)</span>
+                {/* <span className="text-teal-400 font-semibold"> (0)</span> */}
               </a>
             </li>
           </ul>

@@ -92,7 +92,7 @@ const ProductDetails = () => {
     <>
       <Navbar Transparent />
 
-      <section className="relative py-20 mt-12 bg-gray-900">
+      <section className="relative py-20  bg-gray-900">
         <div
           className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20 "
           style={{ transform: "translateZ(0)" }}
@@ -147,8 +147,8 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
-              <div className="md:pr-12 mb-12">
+            <div className="w-full md:w-5/12 ml-auto mr-auto ">
+              <div className="md:pr-12 mb-12 mt-32 lg:mt-20">
                 <h1 className=" text-2xl font-bold">
                   {productDetails ? productDetails?.title : "Title"}
                 </h1>
