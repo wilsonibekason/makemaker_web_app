@@ -67,7 +67,7 @@ const ProductDetails = () => {
               .fetch(queryMore)
               .then((data) => {
                 setProducts(data);
-                console.log(data);
+                console.log(data[0]);
               })
               .catch((error) => {
                 console.log("====================================");
@@ -91,7 +91,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   // destructuring for related products
-  const { publishedAt, title, image, description } = products;
+  //  const { title, image, description } = products;
   return (
     <>
       <Navbar Transparent />
@@ -310,14 +310,20 @@ const ProductDetails = () => {
         {/**   other products components  */}
 
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {Object.keys(products)?.length >= 1 && (
-            <ProductMoreCard
-              title={title}
-              image={image}
-              publishedAt={publishedAt}
-              description={description}
-            />
-          )}
+          {products?.length >= 1 &&
+            products?.map((product, index) => {
+              const { title, image, description, publishedAt, price } = product;
+              return (
+                <ProductMoreCard
+                  title={title}
+                  image={image}
+                  publishedAt={publishedAt}
+                  description={description}
+                  price={price}
+                  key={index}
+                />
+              );
+            })}
         </div>
       </section>
 

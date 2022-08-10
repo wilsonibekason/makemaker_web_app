@@ -2,22 +2,30 @@ import React from "react";
 import moment from "moment";
 import { urlFor } from "../client";
 
-const ProductMoreCard = ({ image, description, title, publishedAt }) => {
+const ProductMoreCard = ({
+  image,
+  description,
+  title,
+  publishedAt,
+  key,
+  price,
+}) => {
   return (
     <>
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto " key={key}>
         <div className="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
           <a href="#">
             <img
               className="rounded-t-lg p-8"
               src={urlFor(image)}
+              // src="https://stackdiary.com/140x100.png"
               alt="product image"
             />
           </a>
           <div className="px-5 pb-5">
             <a href="#">
               <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">
-                Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+                {title}
               </h3>
             </a>
             <div className="flex items-center mt-2.5 mb-5">
@@ -67,7 +75,7 @@ const ProductMoreCard = ({ image, description, title, publishedAt }) => {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                $599
+                {`$${price}`}
               </span>
               <a
                 href="#"
@@ -78,15 +86,6 @@ const ProductMoreCard = ({ image, description, title, publishedAt }) => {
             </div>
           </div>
         </div>
-
-        <p className="mt-5">
-          This card component is part of a larger, open-source library of
-          Tailwind CSS components. Learn more by going to the official{" "}
-          <a className="text-blue-600 hover:underline" href="#" target="_blank">
-            Flowbite Documentation
-          </a>
-          .
-        </p>
       </div>
     </>
   );
