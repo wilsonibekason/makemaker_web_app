@@ -111,28 +111,6 @@ export const blogDetailQuery = (postId) => {
   return query;
 };
 
-// initialising productDetailQuery
-export const productDetailQuery = (productId) => {
-  const query = `*[_type == "banner" && _id == '${productId}']{
-        image{
-            asset->{
-                url
-            }
-        },
-        _id,
-        title,
-        description,
-        tags,
-        saleTime,
-        price,
-        product,
-        publishedAt,
-        discount,
-        productImage
-    }`;
-  return query;
-};
-
 // query for recentpost
 
 export const blogRecentPost = (blogId) => {
@@ -153,6 +131,29 @@ export const tagsCategories = (blogId) => {
   }`;
   return query;
 };
+// initialising productDetailQuery
+export const productDetailQuery = (productId) => {
+  const query = `*[_type == "banner" && _id == '${productId}']{
+        image{
+            asset->{
+                url
+            }
+        },
+        _id,
+        title,
+        description,
+        tags,
+        saleTime,
+        price,
+        product,
+        publishedAt,
+        discount,
+        productImage,
+        category,
+    }`;
+  return query;
+};
+
 // initialising productDetailMoreQuery
 export const productDetailMoreQuery = (product) => {
   const query = `*[_type == "banner" && category == '${product?.category}' && _id != '${product?._id}']{
