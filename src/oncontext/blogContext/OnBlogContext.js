@@ -36,10 +36,10 @@ export const BlogContextProvider = ({ children }) => {
     e.preventDefault();
     setLoading(true);
     setIsError(null);
-    setIsCommented(true);
-    if (!fullName || !email || !message || !title) {
-      setIsError(true);
-    }
+    //setIsCommented(true);
+    // if (!fullName || !email || !message || !title) {
+    //   setLoading(true);
+    // }
     const contacted = {
       _type: "blogComments",
       fullName,
@@ -54,11 +54,19 @@ export const BlogContextProvider = ({ children }) => {
         setLoading(false);
         setIsCommented(false);
         setIsError(null);
+        setFormData({
+          fullName: "",
+          email: "",
+          title: "",
+          message: "",
+        });
       })
       .catch((error) => {
         setLoading(false);
         console.log(error?.response?.body?.error?.description);
         setIsError(error?.response?.body?.error?.description);
+
+        setLoading(false);
       });
   };
   // fetching bloguthorQuery
