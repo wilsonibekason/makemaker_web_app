@@ -56,13 +56,13 @@ const UserDropdown = () => {
         closeDropdownPopover={closeDropdownPopover}
         openDropdownPopover={openDropdownPopover}
       />
-      <CartModal
+      {/* <CartModal
         popoverDropdownRef={popoverDropdownRef}
         dropdownPopoverShow={dropdownPopoverShow}
         btnDropdownRef={btnDropdownRef}
         closeDropdownPopover={closeDropdownPopover}
         openDropdownPopover={openDropdownPopover}
-      />
+      /> */}
       <div
         ref={popoverDropdownRef}
         className={(dropdownPopoverShow ? "block " : "hidden ") + ""}

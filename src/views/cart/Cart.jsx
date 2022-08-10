@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useStateContextProduct } from "../oncontext/productContext/onProductContext";
-import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
+import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
+import { useStateContextEcom } from "../../oncontext/productContext/onEcomContext";
 function CartModal({
   popoverDropdownRef,
   dropdownPopoverShow,

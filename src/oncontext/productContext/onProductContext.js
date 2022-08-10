@@ -14,6 +14,10 @@ import {
   AiOutlineMinus,
   AiFillStar,
 } from "react-icons/ai";
+import {
+  BsFillArrowDownCircleFill,
+  BsFillArrowUpCircleFill,
+} from "react-icons/bs";
 import { TiDeleteOutline } from "react-icons/ti";
 import { format, set } from "date-fns";
 import moment from "moment";
@@ -119,6 +123,8 @@ export const ProductProvider = ({ children }) => {
         animateFilter,
         productBannerID,
         animateCard,
+        BsFillArrowDownCircleFill,
+        BsFillArrowUpCircleFill,
       }}
     >
       {children}

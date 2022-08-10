@@ -19,6 +19,8 @@ const Cart = ({
     AiOutlinePlus,
     AiOutlineMinus,
     TiDeleteOutline,
+    BsFillArrowDownCircleFill,
+    BsFillArrowUpCircleFill,
   } = useStateContextProduct();
   const {
     increaseQuantity,
@@ -44,7 +46,7 @@ const Cart = ({
         className={` ${dropdownPopoverShow ? "block" : "hidden"} bg-gray-100 `}
         ref={popoverDropdownRef}
       >
-        <div className="w-3/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100 ease-linear transition-all duration-150 ">
+        <div className="w-4/12 h-full bg-blueGray-400 fixed right-0 top-0 z-100  overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700 ">
           <div className="w-full h-full bg-white shadow-xl float-right p-3 relative">
             <button
               className="flex flex-wrap center text-sm font-bold gap-2 ml-2 border-none bg-transparent mt-4"
@@ -106,6 +108,65 @@ const Cart = ({
             <div>
               {cartItems?.length >= 1 && (
                 <>
+                  {/** */}
+                  <div className="md:flex items-center mt-14 py-8 border-t border-gray-200">
+                    <div className="w-1/4">
+                      <img
+                        src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
+                        alt
+                        className="w-full h-full object-center object-cover"
+                      />
+                    </div>
+                    <div className="md:pl-3 md:w-3/4">
+                      {/* <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
+                        RF293
+                      </p> */}
+                      <div className="flex items-center justify-between w-full pt-1">
+                        <p className="text-base font-black leading-none text-gray-800">
+                          North wolf bag
+                        </p>
+                        {/* <select className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
+                          <option>01</option>
+                          <option>02</option>
+                          <option>03</option>
+                        </select> */}
+                        <div className="flex-col mt-8">
+                          <BsFillArrowDownCircleFill
+                            size={20}
+                            className="mx-auto"
+                          />
+                          <span className="font-bold text-center ml-1">1</span>
+                          <BsFillArrowUpCircleFill
+                            size={20}
+                            className="mx-auto"
+                          />
+                        </div>
+                      </div>
+                      <p className="text-xs leading-3 text-gray-600 pt-2">
+                        Height: 10 inches
+                      </p>
+                      <p className="text-xs leading-3 text-gray-600 py-4">
+                        Color: Black
+                      </p>
+                      <p className="w-96 text-xs leading-3 text-gray-600">
+                        Composition: 100% calf leather
+                      </p>
+                      <div className="flex items-center justify-between pt-5 pr-6">
+                        <div className="flex itemms-center">
+                          <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">
+                            Add to favorites
+                          </p>
+                          <p className="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">
+                            Remove
+                          </p>
+                        </div>
+                        <p className="text-base font-black leading-none text-gray-800">
+                          $9,000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/** */}
                   <div className="container px-4 mx-auto mt-12">
                     {cartItems?.map((cartItem, index) => {
                       // const { image } = cartItem;
@@ -177,24 +238,26 @@ const Cart = ({
 
                   {/** cart bottom */}
                   {cartItems?.length >= 1 && (
-                    <div className="absolute bottom-0 right-2  w-full p-16 text-center my-4">
-                      <div className="flex justify-between">
-                        <h3 className="text-md sm:text-sm text-blueGray-900 font-bold">
-                          Subtotal
-                        </h3>
-                        <h3 className="text-md sm:text-sm text-blueGray-900 mr-4 font-bold">
-                          {totalPrice}
-                        </h3>
+                    <>
+                      <div className="absolute bottom-0 right-2  w-full p-16 text-center my-4">
+                        <div className="flex justify-between">
+                          <h3 className="text-md sm:text-sm text-blueGray-900 font-bold">
+                            Subtotal
+                          </h3>
+                          <h3 className="text-md sm:text-sm text-blueGray-900 mr-4 font-bold">
+                            {totalPrice}
+                          </h3>
+                        </div>
+                        <div className="w-full m-auto ">
+                          <button
+                            className="  text-blue-500  bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                          >
+                            pay with stripe
+                          </button>
+                        </div>
                       </div>
-                      <div className="w-40 m-auto ">
-                        <button
-                          className=" w-1/2 text-blue-500  bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                          type="button"
-                        >
-                          pay with stripe
-                        </button>
-                      </div>
-                    </div>
+                    </>
                   )}
                   {/** cart bottom */}
                 </>
