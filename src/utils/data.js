@@ -171,3 +171,5 @@ export const productDetailMoreQuery = (product) => {
    }`;
   return query;
 };
+
+// initialising relatedproductsQuery
