@@ -131,6 +131,17 @@ export const tagsCategories = (blogId) => {
   }`;
   return query;
 };
+
+// initialsing blogcomments
+export const blogComments = () => {
+  const query = `*[_type == "blogComments"]{
+    fullName,
+    email,
+    title,
+    message
+  }`;
+  return query;
+};
 // initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
