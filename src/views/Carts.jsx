@@ -1,5 +1,6 @@
 import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
 import React from "react";
+import axios from "../wrapper/baseUrl";
 
 const Carts = () => {
   const {
@@ -17,6 +18,30 @@ const Carts = () => {
     cartItems,
     setShowCart,
   } = useStateContextEcom();
+  const handlePayWithStripe = async (e) => {
+    e.preventDefualt();
+
+    const stripe = await getStripe();
+    try {
+      const response = await axios("api", {
+        method: "POST",
+        body: JSON.stringify(cartItems),
+      });
+      console.log("====================================");
+      console.log(response);
+      console.log("====================================");
+
+      const data = await response.json();
+      console.log(data);
+
+      toast.loading("Redirecting...");
+
+      stripe.redirectToCheckout({ sessionId: data.id });
+    } catch (error) {
+      console.log(error?.resonse?.body);
+    }
+  };
+
   return (
     <div className="cart-wrapper" ref={"cartRef"}>
       <div className="cart-container">
@@ -83,7 +108,7 @@ const Carts = () => {
             <h3>u7s7wduwdhwudhwdw</h3>
           </div>
           <div className="btn-container">
-            <button type="button" className="btn" onClick={"handleCheckout"}>
+            <button type="button" className="btn" onClick={handlePayWithStripe}>
               Pay With Stripe
             </button>
           </div>
