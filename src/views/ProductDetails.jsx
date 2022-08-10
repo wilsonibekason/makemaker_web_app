@@ -11,6 +11,7 @@ import { productDetailQuery, productDetailMoreQuery } from "../utils/data";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import ProductDetailsMore from "./ProductDetailsMore";
+import ProductMoreCard from "./ProductMoreCard";
 
 const {
   useStateContextProduct,
@@ -307,7 +308,17 @@ const ProductDetails = () => {
           </div>
         </div>
         {/**   other products components  */}
-        <div className=""></div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {Object.keys(products)?.length >= 1 && (
+            <ProductMoreCard
+              title={title}
+              image={image}
+              publishedAt={publishedAt}
+              description={description}
+            />
+          )}
+        </div>
       </section>
 
       <Footer />
