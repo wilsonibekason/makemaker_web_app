@@ -88,19 +88,6 @@ const Cart = ({
                     </Link>
                   </div>
                 </div>
-                {/* <div className="m-24 text-center align-center">
-                  <div className="pl-16 ">
-                    <AiOutlineShopping size={150} className="" />
-                  </div>
-                  <h3 className=" w-16 font-bold text-sm">
-                    Your Shopping Cart Is Empty
-                  </h3>
-                  <Link to={"/products"}>
-                    <button className="w-full max-w-screen-2xl hover:max-w-prose p-2 rounded-full border-none text-sm mx-12 uppercase bg-blue-500 hover:bg-blue-200 active:bg-teal-600 cursor-pointer transition-all scale-100 hover:scale-105 mt-12">
-                      Continue Shopping
-                    </button>
-                  </Link>
-                </div> */}
               </>
             )}
             {/** render the empty cart content */}
@@ -120,25 +107,17 @@ const Cart = ({
                         >
                           <div className="w-1/4 shadow">
                             <img
-                              // src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
                               src={urlFor(image)}
                               alt
                               className="w-full h-full object-center object-cover"
                             />
                           </div>
                           <div className="md:pl-3 md:w-3/4">
-                            {/* <p className="text-xs leading-3 text-gray-800 md:pt-0 pt-4">
-                        RF293
-                      </p> */}
                             <div className="flex items-center justify-between w-full pt-1">
                               <p className="text-base font-black leading-none text-gray-800">
                                 {title}
                               </p>
-                              {/* <select className="py-2 px-1 border border-gray-200 mr-6 focus:outline-none">
-                          <option>01</option>
-                          <option>02</option>
-                          <option>03</option>
-                        </select> */}
+
                               <div className="flex-col mt-8">
                                 <BsFillArrowDownCircleFill
                                   size={20}

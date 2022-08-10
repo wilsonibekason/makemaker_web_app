@@ -309,23 +309,24 @@ const ProductDetails = () => {
           </div>
         </div>
         {/**   other products components  */}
-        {products.length >= 1 ? (
+        {/* {products.length >= 1 ? (
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-16 mx-4">
             {products?.length >= 1 &&
               products?.map((product, index) => {
                 const { title, image, description, publishedAt, price, _id } =
                   product;
                 return (
-                  <ProductMoreCard
-                    title={title}
-                    image={image}
-                    publishedAt={publishedAt}
-                    description={description}
-                    price={price}
-                    key={index}
-                    product={product}
-                    id={_id}
-                  />
+                  // <ProductMoreCard
+                  //   title={title}
+                  //   image={image}
+                  //   publishedAt={publishedAt}
+                  //   description={description}
+                  //   price={price}
+                  //   key={index}
+                  //   product={product}
+                  //   id={_id}
+                  // />
+                  <h1>helllo</h1>
                 );
               })}
           </div>
@@ -337,7 +338,7 @@ const ProductDetails = () => {
               </h1>
             </div>
           </>
-        )}
+        )} */}
       </section>
 
       <Footer />
