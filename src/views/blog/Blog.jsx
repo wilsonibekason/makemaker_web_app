@@ -40,7 +40,7 @@ const Blog = () => {
   return (
     <>
       <Navbar transparent />
-      <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+      <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-40">
         <div
           // className={index === current ? showImg : hideImg}
           className={showImg}
