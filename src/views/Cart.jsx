@@ -118,7 +118,7 @@ const Cart = ({
                           className="md:flex items-center mt-14 py-8 border-t border-gray-200"
                           key={index}
                         >
-                          <div className="w-1/4">
+                          <div className="w-1/4 shadow">
                             <img
                               // src="https://cdn.tuk.dev/assets/templates/e-commerce-kit/bestSeller3.png"
                               src={urlFor(image)}

@@ -44,7 +44,7 @@ const Product = () => {
           const { name, desc, image } = item;
           return (
             <div
-              className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75"
+              className="relative pt-40 pb-32 flex content-center items-center justify-center max-h-screen"
               key={index + name}
             >
               <div
