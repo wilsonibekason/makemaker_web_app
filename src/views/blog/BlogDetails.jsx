@@ -342,6 +342,7 @@ const BlogDetails = () => {
                           <MoreBlogs
                             author={author}
                             title={title}
+                            more={blog}
                             id={_id}
                             mainImage={mainImage}
                             desc={description}
