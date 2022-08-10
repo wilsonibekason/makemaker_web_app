@@ -332,7 +332,7 @@ const BlogDetails = () => {
                         author,
                         title,
                         _id,
-                        name,
+
                         mainImage,
                         description,
                         publishedAt,

@@ -13,8 +13,15 @@ const CommentForm = () => {
     title,
     message,
     isCommented,
+    BlogDetails,
     loading,
+    moreBlogs,
   } = useStateBlogContext();
+  const authorName = BlogDetails?.map((item) => item?.author.name);
+  console.log(authorName);
+  // const { name } = author;
+  // console.log(author.map((item) => item.name));
+
   return (
     <>
       <section className="relative block py-24 lg:pt-0 bg-gray-800">
@@ -26,12 +33,12 @@ const CommentForm = () => {
                 {!isCommented ? (
                   <div className="flex-auto p-5 lg:p-10">
                     <h4 className="text-md lg:text-lg font-semibold">
-                      Contact us
+                      Comment Here
                     </h4>
                     <p className="leading-relaxed mt-1 mb-4 text-gray-500 text-xs lg:text-sm ">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Iusto beatae sequi tempore eligendi nisi est
-                      reprehenderit!
+                      Comment on{" "}
+                      <spna className="font-bold uppercase">{`${authorName}'s`}</spna>{" "}
+                      blog post
                     </p>
                     <>
                       <>
