@@ -306,8 +306,8 @@ const ProductDetails = () => {
             </h3>
           </div>
         </div>
-             <di
         {/**   other products components  */}
+        <div className=""></div>
       </section>
 
       <Footer />
