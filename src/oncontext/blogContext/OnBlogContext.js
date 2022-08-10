@@ -12,7 +12,7 @@ export const BlogContextProvider = ({ children }) => {
   const [recentBlogs, setRecentBlogs] = useState([]);
   const [isCommented, setIsCommented] = useState(false);
   const [tags, setTags] = useState([]);
-  const [isError, setIsError] = useState(null);
+  const [isError, setIsError] = useState(false);
   const [localStorage, setLocalStorage] = useState(null);
   /// global for fetching recent and ralated blogsat
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
@@ -37,9 +37,11 @@ export const BlogContextProvider = ({ children }) => {
     setLoading(true);
     setIsError(null);
     //setIsCommented(true);
-    // if (!fullName || !email || !message || !title) {
-    //   setLoading(true);
-    // }
+    if (!fullName || !email || !message || !title) {
+      setLoading(true);
+      setIsError(false);
+      setIsCommented(false);
+    }
     const contacted = {
       _type: "blogComments",
       fullName,
@@ -53,7 +55,7 @@ export const BlogContextProvider = ({ children }) => {
       .then(() => {
         setLoading(false);
         setIsCommented(false);
-        setIsError(null);
+        setIsError(false);
         setFormData({
           fullName: "",
           email: "",
@@ -64,7 +66,7 @@ export const BlogContextProvider = ({ children }) => {
       .catch((error) => {
         setLoading(false);
         console.log(error?.response?.body?.error?.description);
-        setIsError(error?.response?.body?.error?.description);
+        // setIsError(error?.response?.body?.error?.description);
 
         setLoading(false);
       });

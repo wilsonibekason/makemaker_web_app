@@ -126,6 +126,19 @@ const CommentForm = () => {
                           {`${!loading ? "submit comment" : "sending"} `}
                         </button>
                       </div>
+                    ) : // {/** end of form */}
+                    <div className="relative flex w-full flex-wrap items-stretch mb-3">
+                        <p className="text-md text-blueGray-600 font-bold">
+                          Thanks for your comment
+                        </p>
+                      </div> ? (
+                      isError(
+                        <div className="relative flex w-full flex-wrap items-stretch mb-3">
+                          <p className="text-md text-blueGray-600 font-bold">
+                            PLease add valid inputs
+                          </p>
+                        </div>
+                      )
                     ) : (
                       // {/** end of form */}
                       <div className="relative flex w-full flex-wrap items-stretch mb-3">
