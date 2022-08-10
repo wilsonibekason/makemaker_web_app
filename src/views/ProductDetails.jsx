@@ -312,7 +312,8 @@ const ProductDetails = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {products?.length >= 1 &&
             products?.map((product, index) => {
-              const { title, image, description, publishedAt, price } = product;
+              const { title, image, description, publishedAt, price, _id } =
+                product;
               return (
                 <ProductMoreCard
                   title={title}
@@ -321,6 +322,8 @@ const ProductDetails = () => {
                   description={description}
                   price={price}
                   key={index}
+                  product={product}
+                  id={_id}
                 />
               );
             })}

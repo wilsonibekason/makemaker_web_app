@@ -1,6 +1,8 @@
 import React from "react";
 import moment from "moment";
 import { urlFor } from "../client";
+import { useStateContextEcom } from "../oncontext/productContext/onEcomContext";
+import { useNavigate } from "react-router-dom";
 
 const ProductMoreCard = ({
   image,
@@ -9,7 +11,11 @@ const ProductMoreCard = ({
   publishedAt,
   key,
   price,
+  product,
+  id,
 }) => {
+  const { onAdd, productQuantity } = useStateContextEcom();
+  const navigate = useNavigate();
   return (
     <>
       <div className="max-w-2xl mx-auto " key={key}>
@@ -77,11 +83,21 @@ const ProductMoreCard = ({
               <span className="text-3xl font-bold text-gray-900 dark:text-white">
                 {`$${price}`}
               </span>
+              {/* <a
+                href="#"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() => onAdd(productQuantity, product)}
+              >
+                Add to cart
+              </a> */}
               <a
                 href="#"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() =>
+                  navigate(`/productdetails/${id}`, { replace: true })
+                }
               >
-                Add to cart
+                view product
               </a>
             </div>
           </div>
