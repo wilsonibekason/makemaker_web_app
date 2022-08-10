@@ -64,6 +64,13 @@ export default {
       required: true,
     },
     {
+      name: "category",
+      title: "Category",
+      type: "string",
+      desdription:
+        "This field is required for filtering out the categories and related products",
+    },
+    {
       name: "product",
       type: "string",
       title: "Product",

@@ -66,6 +66,7 @@ const ProductDetails = () => {
               .fetch(queryMore)
               .then((data) => {
                 setProducts(data);
+                console.log(data);
               })
               .catch((error) => {
                 console.log("====================================");
@@ -88,6 +89,7 @@ const ProductDetails = () => {
     fetchProductDetails();
   }, [productId]);
 
+  console.log(products);
   return (
     <>
       <Navbar Transparent />

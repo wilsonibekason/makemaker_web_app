@@ -155,7 +155,7 @@ export const tagsCategories = (blogId) => {
 };
 // initialising productDetailMoreQuery
 export const productDetailMoreQuery = (product) => {
-  const query = `*[_type == "banner" && tag == '${product?.tag}' && _id != '${product?._id}']{
+  const query = `*[_type == "banner" && category == '${product?.category}' && _id != '${product?._id}']{
     image{
         asset->{
             url
