@@ -16,7 +16,7 @@ export default function Navbar() {
           {/* Brand */}
           <Link
             to={"/"}
-            className="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+            className="text-white text-sm uppercase inline-block lg:inline-block font-semibold"
           >
             <img
               src={reachImg}
@@ -40,7 +40,7 @@ export default function Navbar() {
           </form>
           {/* User */}
           <div className=" fas fa-cart  "></div>
-          <ul className="flex-col md:flex-row list-none items-center hidden md:flex">
+          <ul className="flex-col md:flex-row list-none items-center flex md:flex">
             <UserDropdown />
           </ul>
         </div>

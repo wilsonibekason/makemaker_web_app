@@ -32,12 +32,12 @@ const UserDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        <span className="absolute right-12 text-sm text-gray-200 w-5 rounded-lg text-center font-semibold h-4 bg-gray-600 px-auto">
-          {totalQuantities}
-        </span>
         <div className="items-center flex">
           <span className="w-12 h-12 text-sm text-white bg-gray-200 inline-flex items-center justify-center rounded-full">
-            <BsCart3 width={40} />
+            {/* <BsCart3 width={40} /> */}
+            <span className=" absolute bottom-10 ml-10 text-sm text-gray-200 w-5 rounded-lg text-center font-semibold h-4 bg-gray-600 ">
+              {totalQuantities}
+            </span>
             <img
               alt="..."
               className="w-full rounded-full align-middle border-none shadow-lg"
