@@ -29,7 +29,7 @@ export default function Navbar(props) {
               <img
                 src={reachImg}
                 alt=""
-                className="max-w-full mx-auto p-0 h-auto align-middle my-0 w-32"
+                className="max-w-full mx-auto p-0 h-auto align-middle my-0 w-40"
               />
             </Link>
 

@@ -68,7 +68,7 @@ export default function Landing() {
               <div className="container relative mx-auto">
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                    <div className="pr-12">
+                    <div className="pr-12 mt-16 lg:mt-40">
                       <h1 className="text-white font-semibold text-5xl">
                         {title}
                       </h1>
