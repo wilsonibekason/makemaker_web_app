@@ -33,6 +33,7 @@ const BlogDetails = () => {
     handleEmailChange,
     handleEmailSubmit,
     isEmailSubmitted,
+    newsletterEmail,
   } = useStateBlogContext();
   const { BiLeftArrow, BiRightArrow } = useStateContext();
   ///// set global variables
@@ -315,13 +316,14 @@ const BlogDetails = () => {
                           <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
                             <input
                               type="email"
+                              onKeyPress={handleEmailSubmit}
                               placeholder="Send us your email to receive daily newsletters"
                               class="px-2 py-1 placeholder-gray-900 text-gray-600
                       bg-white rounded text-sm border border-gray-800 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
                               name="email"
-                              // value={email}
+                              value={newsletterEmail}
                               required
-                              // onChange={handleChange}?
+                              onChange={handleEmailChange}
                             />
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
                               <i class="fas fa-envelope"></i>
@@ -329,9 +331,9 @@ const BlogDetails = () => {
                           </div>
                         </>
                       ) : (
-                        <div className="relative flex w-full flex-wrap items-stretch mb-3">
-                          <p className="text-md text-blueGray-600 font-bold">
-                            Thanks for your comment
+                        <div className="mx-auto mt-2">
+                          <p className="text-xs lg:text-sm text-sky-800 font-bold text-center">
+                            Thanks, we will reach out soon
                           </p>
                         </div>
                       )}

@@ -45,7 +45,7 @@ export const BlogContextProvider = ({ children }) => {
     };
     client
       .create(emailMessage)
-      .then(() => setIsEmailSubmitted(true))
+      .then(() => setIsEmailSubmitted(true) && setNewsletterEmail(""))
       .catch((error) => console.log(error.response.body.error.description));
   };
   const handleSubmit = (e) => {
@@ -169,6 +169,7 @@ export const BlogContextProvider = ({ children }) => {
         handleEmailChange,
         handleEmailSubmit,
         isEmailSubmitted,
+        newsletterEmail,
       }}
     >
       {children}
