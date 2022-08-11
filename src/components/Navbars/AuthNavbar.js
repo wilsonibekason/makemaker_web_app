@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 // components
 
 import PagesDropdown from "../../components/Dropdowns/PagesDropdown.js";
@@ -101,7 +101,12 @@ export default function Navbar(props) {
               </li>
 
               <li className="flex items-center">
-                <button
+                <motion.button
+                  whileHover={{
+                    scale: 1.1,
+                    textShadow: "0px 0px 8px rgb(255,255,255)",
+                    boxShadow: "initial",
+                  }}
                   className="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-sm shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
                   type="button"
                 >
@@ -109,7 +114,7 @@ export default function Navbar(props) {
                     <i className="fas fa-arrow-alt-circle-right"></i> Get
                     Started
                   </Link>
-                </button>
+                </motion.button>
               </li>
             </ul>
           </div>
