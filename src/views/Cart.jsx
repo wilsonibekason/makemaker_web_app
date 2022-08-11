@@ -59,7 +59,7 @@ const Cart = ({
               }}
             >
               <AiOutlineRight size={30} />
-              <span className="ml-2 font-base text-sm md:text-md lg:text-xl">
+              <span className="ml-2 font-base text-md md:text-md lg:text-xl">
                 Your Cart
               </span>
               <span className="ml-2 text-gray-600 text-sm md:text-md lg:text-xl">

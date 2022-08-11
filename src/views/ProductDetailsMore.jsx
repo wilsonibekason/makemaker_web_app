@@ -77,7 +77,7 @@ const ProductDetailsMore = ({ description }) => {
                 role="tablist"
               >
                 reviews{" "}
-                {/* <span className="text-teal-400 font-semibold"> (0)</span> */}
+                <span className="text-teal-600 font-semibold"> (0)</span>
               </a>
             </li>
           </ul>
