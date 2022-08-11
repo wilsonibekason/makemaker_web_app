@@ -54,6 +54,7 @@ import blockContents from "./blogs/blockContents";
 import post from "./blogs/post";
 import categorys from "./blogs/categorys";
 import blogComments from "./blogs/blogComments";
+import newsletter from "./blogs/newsletter";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -112,5 +113,6 @@ export default createSchema({
     post,
     categorys,
     blogComments,
+    newsletter,
   ]),
 });
