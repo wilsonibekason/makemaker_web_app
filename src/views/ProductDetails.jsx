@@ -276,35 +276,9 @@ const ProductDetails = () => {
 
         {/**   other products components  */}
         <div className="flex flex-col items-center justify-center">
-          <div className="w-full md:w-6/12 px-6 md:px-4 ml-auto mr-auto mt-6">
-            <h3 className="text-2xl font-semibold mb-1 leading-normal">
-              <div className="py-2  items-center justify-center">
-                <nav className="block">
-                  <ul className="flex pl-0 rounded list-none flex-wrap">
-                    {renderMoreProductsItems1?.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href="#pablo"
-                          className="first:ml-0 text-xs font-bold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-lightBlue-500 bg-white text-lightBlue-500 uppercase"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                    {"  "}
-                    {renderMoreProductsItems2?.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href="#pablo"
-                          className="first:ml-0 text-xs flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid font-bold border-lightBlue-500 bg-white text-lightBlue-900 uppercase"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
+          <div className="w-full md:w-6/12 px-6 md:px-4 ml-auto mx-auto mt-6">
+            <h3 className="text-2xl font-bold mb-1 leading-normal uppercase text-center text-white">
+              similar products
             </h3>
           </div>
         </div>

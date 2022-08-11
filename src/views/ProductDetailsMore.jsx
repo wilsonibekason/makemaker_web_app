@@ -44,7 +44,7 @@ const ProductDetailsMore = ({ description }) => {
             <li className="-mb-px mr-2 last:mr-0 flex-auto text-center w-36 lg:w-40 md:w-40">
               <a
                 className={
-                  " text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
+                  " text-xs  font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal " +
                   (openTab === 2
                     ? "text-white bg-blue-600"
                     : "text-blue-600 bg-white")

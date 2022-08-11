@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 const EcomContext = createContext({});
 
 export const EcomProvider = ({ children }) => {
-  const renderMoreProductsItems1 = ["r", "e", "l", "a", "t", "e", "d"];
+  const renderMoreProductsItems1 = ["m", "o", "r", "e"];
   const renderMoreProductsItems2 = ["p", "r", "o", "d", "u", "c", "t", "s"];
   let id = useParams();
   let productId = id?.id;
