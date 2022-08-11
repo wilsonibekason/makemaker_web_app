@@ -13,7 +13,8 @@ export default function Navbar(props) {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="sticky top-0  z-50 w-full h-0 flex flex-wrap items-center justify-between px-2 py-1 navbar-expand-lg">
+      {/* <nav className="sticky top-0  z-50 w-full bg-gray-900 h-0 flex flex-wrap items-center justify-between px-2 py-1 navbar-expand-lg"> */}
+      <nav className="sticky top-0 left-0 w-full h-16 z-10 bg-gray-700 md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             {/* <Link

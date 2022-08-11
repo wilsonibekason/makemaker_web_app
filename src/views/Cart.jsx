@@ -138,7 +138,7 @@ const Cart = ({
                                 />
                               </div>
                             </div>
-                            <p className="text-xs leading-3 text-gray-600 pt-2">
+                            {/* <p className="text-xs leading-3 text-gray-600 pt-2">
                               Height: 10 inches
                             </p>
                             <p className="text-xs leading-3 text-gray-600 py-4">
@@ -146,7 +146,7 @@ const Cart = ({
                             </p>
                             <p className="w-96 text-xs leading-3 text-gray-600">
                               Composition: 100% calf leather
-                            </p>
+                            </p> */}
                             <div className="flex items-center justify-between pt-5 pr-6">
                               <div className="flex itemms-center">
                                 <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">

@@ -17,6 +17,9 @@ import {
 import {
   BsFillArrowDownCircleFill,
   BsFillArrowUpCircleFill,
+  BsStarHalf,
+  BsStarFill,
+  BsStar,
 } from "react-icons/bs";
 import { TiDeleteOutline } from "react-icons/ti";
 import { format, set } from "date-fns";
@@ -31,12 +34,7 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [productBanner, setProductsBanner] = useState([]);
   const [productHeader, setProductHeader] = useState([]);
-  // const [productIsLoading, setProductIsLoading] = useState(false);
-  // const [productIsLoaded, setProductIsLoaded] = useState(false);
-  // const [productError, setProductError] = useState(false);
-  // const [productSuccess, setProductSuccess] = useState(false);
-  // const [productErrorMsg, setProductErrorMsg] = useState("");
-  // const [productSuccessMsg, setProductSuccessMsg] = useState("");
+
   // STATES FOR FILTERING PRODUCTS
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [filterProducts, setFilterProducts] = useState([]);
@@ -100,6 +98,12 @@ export const ProductProvider = ({ children }) => {
     "hover:text-blueGray-200 hover:bg-blueGray-900 text-sm font-semibold inline-block py-1 px-2 rounded-full text-blueGray-900 bg-red-200 uppercase last:mr-0 mr-2 mt-4 ";
 
   // FILTER BUTTON ACTIONS
+
+  // initialising REVIEW LOGIC
+  // star 0
+  //star 50
+  // star 100
+  const star = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
   return (
     <ProductContext.Provider
       value={{
@@ -125,6 +129,9 @@ export const ProductProvider = ({ children }) => {
         animateCard,
         BsFillArrowDownCircleFill,
         BsFillArrowUpCircleFill,
+        BsStarHalf,
+        BsStarFill,
+        BsStar,
       }}
     >
       {children}

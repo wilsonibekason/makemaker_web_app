@@ -68,14 +68,38 @@ export default function Landing() {
               <div className="container relative mx-auto">
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                    <div className="pr-12 mt-16 lg:mt-40">
-                      <h1 className="text-white font-semibold text-5xl">
+                    <motion.div
+                      className="pr-12 mt-16 lg:mt-40"
+                      initial={{
+                        y: -80,
+                        x: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        x: 0,
+                        y: -40,
+                        opacity: 1,
+                      }}
+                      transition={{
+                        delay: 1.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 500,
+                      }}
+                    >
+                      <motion.h1
+                        className="text-white font-semibold text-5xl"
+                        animate={{
+                          fontSize: "35px",
+                          color: "blue",
+                        }}
+                      >
                         {title}
-                      </h1>
+                      </motion.h1>
                       <p className="mt-4 text-lg text-gray-200">
                         {description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -104,8 +128,31 @@ export default function Landing() {
 
         <section className="pb-20 bg-gray-200 -mt-24">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap">
-              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
+            <motion.div
+              className="flex flex-wrap"
+              initial={{
+                opacity: 0,
+                y: 100,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 3,
+                duration: 2,
+                type: "spring",
+                stiffness: 500,
+              }}
+            >
+              {/** vvv */}
+
+              <motion.div
+                className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center"
+                whileHover={{
+                  scale: 1.1,
+                }}
+              >
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
@@ -119,23 +166,24 @@ export default function Landing() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               <motion.div
                 className="w-full md:w-4/12 px-4 text-center"
+                whileHover={{
+                  scale: 1.1,
+                }}
                 initial={{
                   opacity: 0,
-                  scale: 0.5,
+                  y: 100,
                 }}
                 animate={{
                   opacity: 1,
-                  scale: [1, 2, 2, 1, 1],
-                  // rotate: [0, 0, 270, 270, 0],
-                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                  y: 0,
                 }}
                 transition={{
                   duration: 0.5,
-                  delayChildren: 0.5,
+                  ease: "easeInOut",
                 }}
               >
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg ease-linear transition-all duration-150">
@@ -153,7 +201,12 @@ export default function Landing() {
                 </div>
               </motion.div>
 
-              <div className="pt-6 w-full md:w-4/12 px-4 text-center">
+              <motion.div
+                className="pt-6 w-full md:w-4/12 px-4 text-center"
+                whileHover={{
+                  scale: 1.1,
+                }}
+              >
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
@@ -167,8 +220,8 @@ export default function Landing() {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             {aboutSection?.map((item, index) => {
               const {
                 articleTitle,
@@ -180,7 +233,21 @@ export default function Landing() {
               } = item;
               return (
                 <div className="flex flex-wrap items-center mt-32">
-                  <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
+                  <motion.div
+                    className="w-full md:w-5/12 px-4 mr-auto ml-auto"
+                    initial={{
+                      x: 100,
+                    }}
+                    animate={{
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: 3,
+                      duration: 2,
+                      type: "spring",
+                      stiffness: 500,
+                    }}
+                  >
                     <div className="text-gray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                       <i className="fas fa-user-friends text-xl"></i>
                     </div>
@@ -199,10 +266,27 @@ export default function Landing() {
                     <Link to="/" className="font-bold text-gray-700 mt-8">
                       {companyName}
                     </Link>
-                  </div>
+                  </motion.div>
 
-                  <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                    <div className="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
+                  <motion.div
+                    className="w-full md:w-4/12 px-4 mr-auto ml-auto"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    initial={{
+                      x: -100,
+                    }}
+                    animate={{
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: 3,
+                      duration: 2,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                  >
+                    <div className="relative flex flex-col min-w-0 break-words  w-full mb-6 shadow-lg rounded-lg bg-blue-500">
                       <img
                         alt="..."
                         //src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
@@ -210,7 +294,7 @@ export default function Landing() {
                         className="w-full align-middle rounded-t-lg"
                       />
                       <blockquote className="relative p-8 mb-4">
-                        <svg
+                        {/* <svg
                           preserveAspectRatio="none"
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 583 95"
@@ -220,7 +304,7 @@ export default function Landing() {
                             points="-30,95 583,95 583,65"
                             className="text-lightBlue-500 fill-current"
                           ></polygon>
-                        </svg>
+                        </svg> */}
                         <h4 className="text-xl font-bold text-white">
                           {cardTitle}
                         </h4>
@@ -229,7 +313,7 @@ export default function Landing() {
                         </p>
                       </blockquote>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               );
             })}
