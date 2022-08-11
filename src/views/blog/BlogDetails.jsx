@@ -30,6 +30,9 @@ const BlogDetails = () => {
     setRecentBlogs,
     tags,
     setTags,
+    handleEmailChange,
+    handleEmailSubmit,
+    isEmailSubmitted,
   } = useStateBlogContext();
   const { BiLeftArrow, BiRightArrow } = useStateContext();
   ///// set global variables
@@ -307,21 +310,31 @@ const BlogDetails = () => {
                       </p>
                       <div className="border-t bg-sky-400 mt-2"></div>
                       {/**email input for newletters */}
-                      <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
-                        <input
-                          type="email"
-                          placeholder="Send us your email to receive daily newsletters"
-                          class="px-2 py-1 placeholder-gray-900 text-gray-600
+                      {!isEmailSubmitted ? (
+                        <>
+                          <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
+                            <input
+                              type="email"
+                              placeholder="Send us your email to receive daily newsletters"
+                              class="px-2 py-1 placeholder-gray-900 text-gray-600
                       bg-white rounded text-sm border border-gray-800 outline-none focus:outline-none focus:shadow-outline w-full pr-10"
-                          name="email"
-                          // value={email}
-                          required
-                          // onChange={handleChange}?
-                        />
-                        <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
-                          <i class="fas fa-envelope"></i>
-                        </span>
-                      </div>
+                              name="email"
+                              // value={email}
+                              required
+                              // onChange={handleChange}?
+                            />
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-300  bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-2 py-1">
+                              <i class="fas fa-envelope"></i>
+                            </span>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="relative flex w-full flex-wrap items-stretch mb-3">
+                          <p className="text-md text-blueGray-600 font-bold">
+                            Thanks for your comment
+                          </p>
+                        </div>
+                      )}
                     </div>
                     {/**Recent post section */}
                     <div className="mb-4 ">
