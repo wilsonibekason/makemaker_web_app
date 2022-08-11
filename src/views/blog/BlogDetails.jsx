@@ -2,6 +2,7 @@ import { useStateContextProduct } from "../../oncontext/productContext/onProduct
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import moment from "moment";
+import { motion } from "framer-motion";
 import {
   blogDetailMoreQuery,
   blogDetailQuery,
@@ -129,7 +130,7 @@ const BlogDetails = () => {
               <div className="container relative mx-auto">
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                    <div className="pr-12">
+                    <div className="pr-12 mt-16 lg:mt-40 md:mt-32">
                       <h1 className="text-white font-bold text-4xl">{title}</h1>
                       <p className="mt-4 text-sm text-gray-200">
                         {description}
@@ -158,9 +159,93 @@ const BlogDetails = () => {
                 </svg>
               </div>
             </div>
+            {/**Recent post section*/}
+
+            <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+              <div className={`${showImg} bg-sky-600`}>
+                <span
+                  id="blackOverlay"
+                  className="w-full h-full absolute opacity-75 bg-black"
+                ></span>
+              </div>
+              <div className="container relative mx-auto">
+                <div className="items-center flex flex-wrap">
+                  <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                    <motion.div
+                      className="pr-12 mt-16 lg:mt-40 md:mt-32"
+                      initial={{
+                        y: -100,
+                        x: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        alignItems: "center",
+                        color: "whitesmoke",
+                        opacity: [0.9, 1, 1.1],
+                      }}
+                      transition={{
+                        delay: 1.2,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 500,
+                        staggerDirection: 4,
+                      }}
+                    >
+                      <motion.h1
+                        className="text-white font-bold text-4xl 
+                      "
+                        initial={{
+                          y: -80,
+                          x: 0,
+                          opacity: 0,
+                        }}
+                        animate={{
+                          fontSize: "40px",
+                          color: "blue",
+                          x: 0,
+                          y: -20,
+                          opacity: 1,
+                        }}
+                        transition={{
+                          delay: 1.5,
+                          duration: 1,
+                          type: "spring",
+                          stiffness: 500,
+                        }}
+                      >
+                        {title}
+                      </motion.h1>
+                      <p className="mt-4 text-sm text-gray-200">
+                        {description}
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+                style={{ transform: "translateZ(0)" }}
+              >
+                <svg
+                  className="absolute bottom-0 overflow-hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    className="text-gray-200 fill-current"
+                    points="2560 0 2560 100 0 100"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+            {/**Recent post section*/}
 
             {/** BLOGDETAILS COMPONENT */}
-            <div className="container mx-auto my-4 dark:bg-gray-800">
+            <div className="container mx-auto my-4">
               <div className="flex justify-between items-center flex-col  lg:flex-row md:flex-row sm:flex-col">
                 {/** BLOG DETAILS COMPONENT */}
                 <div className="w-full md:w-6/12 lg:w-10/12 px-2 md:px-4 lg:px-4 mx-auto lg:mx-2 mt-12">
