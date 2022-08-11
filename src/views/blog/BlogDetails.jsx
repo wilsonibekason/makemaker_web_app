@@ -403,11 +403,29 @@ const BlogDetails = () => {
               </div>
             </div>
             {/**moreblogs */}
-            <div className="mx-auto my-4">
-              <h2 className="text-3xl md:text-xl lg:text-3xl font-bold text-gray-500 text-center underline">
+            <motion.div
+              className="mx-auto my-4"
+              initial={{
+                y: 0,
+                x: 100,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                y: 0,
+                opacity: 1,
+              }}
+              transition={{
+                delay: 1.5,
+                duration: 1,
+                type: "spring",
+                stiffness: 500,
+              }}
+            >
+              <h2 className="text-lg md:text-xl lg:text-3xl font-semibold text-white text-center border p-3 m-2 bg-sky-600">
                 More Posts Like This
               </h2>
-            </div>
+            </motion.div>
             {moreBlogs || moreBlogs?.length >= 1 ? (
               <>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-8 gap-3 px-2">

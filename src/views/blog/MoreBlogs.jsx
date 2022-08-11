@@ -1,5 +1,6 @@
 import { urlFor } from "../../client";
 import moment from "moment";
+import { motion } from "motion";
 import { useNavigate } from "react-router-dom";
 const MoreBlogs = ({
   title,
