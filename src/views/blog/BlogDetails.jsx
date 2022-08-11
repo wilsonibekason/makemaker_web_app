@@ -1,6 +1,6 @@
 import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import moment from "moment";
 import { motion } from "framer-motion";
 import {
@@ -36,6 +36,7 @@ const BlogDetails = () => {
     newsletterEmail,
   } = useStateBlogContext();
   const { BiLeftArrow, BiRightArrow } = useStateContext();
+  const navigate = useNavigate();
   ///// set global variables
   let blogid;
   let query;
@@ -118,11 +119,8 @@ const BlogDetails = () => {
           <>
             <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
               <div
-                //={index === current ? showImg : hideImg}
                 className={showImg}
                 style={{
-                  // backgroundImage:
-                  // "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
                   backgroundImage: `url(${urlFor(mainImage).url()})`,
                 }}
               >
@@ -355,7 +353,14 @@ const BlogDetails = () => {
                             <>
                               <Link to={`/blogpost/${_id}`}>
                                 <div className="border-t bg-gray-300 mt-2"></div>
-                                <div className="flex flex-col bg-sky-800 hover:bg-sky-500 active:bg-sky-200 items-center mx-auto cursor-pointer">
+                                <div
+                                  className="flex flex-col bg-sky-800 hover:bg-sky-500 active:bg-sky-200 items-center mx-auto cursor-pointer"
+                                  // onClick={() =>
+                                  //   navigate(`/blogpost/${_id}`, {
+                                  //     replace: true,
+                                  //   })
+                                  // }
+                                >
                                   <h4 className="text-sm uppercase font-semibold  text-white  ">
                                     {title}
                                   </h4>
