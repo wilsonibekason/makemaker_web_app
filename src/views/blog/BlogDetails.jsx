@@ -1,6 +1,6 @@
 import { useStateContextProduct } from "../../oncontext/productContext/onProductContext";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import moment from "moment";
 import { motion } from "framer-motion";
 import {
@@ -298,14 +298,14 @@ const BlogDetails = () => {
                 {/** BLOG DETAILS COMPONENT */}
 
                 {/** BLOG CATEGORY COMPONENT */}
-                <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky bg-gray-900 rounded-md">
-                  <div className="border border-gray-400 border-solid p-4 my-4 ">
+                <div className="  w-full md:w-4/12 lg:w-4/12 px-4 mx-4 md:px-4 mt-32 sticky  rounded-md">
+                  <div className="border border-sky-600 border-solid p-4 my-4 ">
                     {" "}
                     <div className="mb-4">
-                      <p className="text-sm text-gray-900 dark:text-dark dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold ">
+                      <p className="text-sm text-white dark:text-dark dark:hover:text-white dark:bg-sky-800  dark:hover uppercase text-center font-semibold ">
                         newsletter
                       </p>
-                      <div className="border-t bg-gray-800 mt-2"></div>
+                      <div className="border-t bg-sky-400 mt-2"></div>
                       {/**email input for newletters */}
                       <div class="relative flex w-full flex-wrap items-stretch mb-3 mt-4">
                         <input
@@ -325,9 +325,9 @@ const BlogDetails = () => {
                     </div>
                     {/**Recent post section */}
                     <div className="mb-4 ">
-                      <div className="border-t bg-gray-300 mt-2"></div>
-                      <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-900 dark:text-black dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
+                      <div className="border-t  mt-2"></div>
+                      <div className="border border-solid border-sky-800 shadow-xl ">
+                        <p className="text-sm text-white dark:text-white dark:hover:text-white dark:bg-sky-800  dark:hover uppercase text-center font-semibold mt-2">
                           recent post
                         </p>
                         {/**Recent post section */}
@@ -338,32 +338,34 @@ const BlogDetails = () => {
                             : "";
                           return (
                             <>
-                              <div className="border-t bg-gray-300 mt-2"></div>
-                              <div className="flex flex-col  items-center mx-auto">
-                                <h4 className="text-sm uppercase font-semibold  text-lightBlue-400  ">
-                                  {title}
-                                </h4>
-                                <p className="text-xs text-lightBlue-400 font-semibold">
-                                  {" "}
-                                  {description && description.length < 50
-                                    ? description.slice(0, 30)
-                                    : "no description"}
-                                </p>
-                                <div className="border-t bg-lightBlue-300 mt-2"></div>
-                                <div class="flex flex-col md:flex-row lg:flex-row  items-start">
-                                  <span class="mb-1 text-sm font-bold mx-2">
-                                    {displayDate}
-                                  </span>
-                                  <a
-                                    href="https://stackdiary.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer nofollow"
-                                    class="text-sm"
-                                  >
-                                    3mins read
-                                  </a>
+                              <Link to={`/blogpost/${_id}`}>
+                                <div className="border-t bg-gray-300 mt-2"></div>
+                                <div className="flex flex-col bg-sky-800 hover:bg-sky-500 active:bg-sky-200 items-center mx-auto cursor-pointer">
+                                  <h4 className="text-sm uppercase font-semibold  text-white  ">
+                                    {title}
+                                  </h4>
+                                  <p className="text-xs text-white font-semibold">
+                                    {" "}
+                                    {description && description.length < 50
+                                      ? description.slice(0, 30)
+                                      : "no description"}
+                                  </p>
+                                  <div className="border-t bg-white mt-2"></div>
+                                  <div class="flex flex-col md:flex-row lg:flex-row  items-start">
+                                    <span class="mb-1 text-sm font-bold mx-2 text-white">
+                                      {displayDate}
+                                    </span>
+                                    <a
+                                      href="https://stackdiary.com/"
+                                      target="_blank"
+                                      rel="noopener noreferrer nofollow"
+                                      class="text-sm text-white"
+                                    >
+                                      3mins read
+                                    </a>
+                                  </div>
                                 </div>
-                              </div>
+                              </Link>
                               {/**djdjdjddd */}
                             </>
                           );
@@ -375,19 +377,19 @@ const BlogDetails = () => {
                     {/**tags and categories section */}
                     <div className="mb-4 ">
                       <div className="border-t bg-gray-300 mt-2"></div>
-                      <div className="border border-solid shadow-md ">
-                        <p className="text-sm text-gray-600 dark:text-black dark:hover:text-white dark:bg-gray-200  dark:hover uppercase text-center font-semibold mt-2">
+                      <div className="border border-solid border-sky-600 shadow-md ">
+                        <p className="text-sm text-gray-600 dark:text-white dark:hover:text-white dark:bg-sky-800  dark:hover uppercase text-center font-semibold mt-2">
                           tags and categories
                         </p>
                         {/**Recent post section */}
 
                         <div className="border-t bg-gray-300 mt-2"></div>
-                        <div className="flex flex-col  items-center mx-auto">
+                        <div className="flex flex-col  items-center mx-auto bg-sky-800">
                           <div className="block mb-2">
-                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-gray-400 text-white  uppercase last:mr-0 mr-2 ml-2 mt-2">
+                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-white text-white  text-sky-800 hover:border-white hover:bg-sky-800 hover:border hover:border-solid hover:text-white  uppercase last:mr-0 mr-2 ml-2 mt-2 cursor-pointer">
                               hdhhd
                             </span>
-                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-gray-400 text-white uppercase last:mr-0 mr-2 ml-2 mt-2">
+                            <span className="text-xs font-semibold inline-block py-1 px-2  rounded-lg bg-white text-white text-sky-800 hover:border-white hover:bg-sky-800 hover:border hover:border-solid hover:text-white uppercase last:mr-0 mr-2 ml-2 mt-2 cursor-pointer">
                               hdhhd
                             </span>
                           </div>
