@@ -154,6 +154,15 @@ export const HomeContext = ({ children }) => {
   const productSecTitle = projectSection?.map((item) => item?.pageName);
   const productSecDesc = projectSection?.map((item) => item?.desc);
   const productSecImage = projectSection?.map((item) => urlFor(item?.image));
+  const productAboutImage = projectSection?.map((item) =>
+    urlFor(item?.aboutusImage)
+  );
+  const productShopImage = projectSection?.map((item) =>
+    urlFor(item?.productImage)
+  );
+  const productBlogImage = projectSection?.map((item) =>
+    urlFor(item?.blogImage)
+  );
   const ImageSecTitle = projectSection?.map((item) => item?.productNmae);
 
   const length = header.length;
@@ -213,6 +222,9 @@ export const HomeContext = ({ children }) => {
         current,
         BiLeftArrow,
         BiRightArrow,
+        productAboutImage,
+        productShopImage,
+        productBlogImage,
       }}
     >
       {children}

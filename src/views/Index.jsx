@@ -73,6 +73,9 @@ const Index = () => {
     current,
     BiLeftArrow,
     BiRightArrow,
+    productAboutImage,
+    productShopImage,
+    productBlogImage,
   } = useStateContext();
 
   console.log(header);
@@ -468,7 +471,7 @@ const Index = () => {
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          src={inspireContentImage}
+                          src={productShopImage}
                         />
                       </div>
                     </Link>
@@ -482,7 +485,7 @@ const Index = () => {
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          src={productSecImage}
+                          src={productAboutImage}
                           //src={require("assets/img/login.jpg").default}
                         />
                       </div>
@@ -497,8 +500,7 @@ const Index = () => {
                         <img
                           alt="..."
                           className="align-middle border-none max-w-full h-auto rounded-lg"
-                          src={require("../assets/img/login.jpg").default}
-                          //src={""}
+                          src={productBlogImage}
                         />
                       </div>
                     </Link>

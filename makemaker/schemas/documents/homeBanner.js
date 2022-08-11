@@ -11,6 +11,24 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: "aboutusImage",
+      title: "AboutImage",
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
+      name: "productImage",
+      title: "ProductImage",
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
+      name: "blogImage",
+      title: "BlogImage",
+      type: "image",
+      options: { hotspot: true },
+    },
 
     {
       name: "desc",
