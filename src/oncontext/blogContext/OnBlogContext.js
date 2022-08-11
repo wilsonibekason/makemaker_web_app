@@ -25,14 +25,29 @@ export const BlogContextProvider = ({ children }) => {
     title: "",
     message: "",
   });
-
-  //destructure formData Input
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
+  //destructuATre formData Input
   const { fullName, message, email, title } = formData;
   // handkeChange for blog comment
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-
+  const handleEmailChange = (e) => {
+    setNewsletterEmail(e.target.value);
+  };
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    setIsEmailSubmitted(false);
+    const emailMessage = {
+      _type: "newsEmail",
+      email: newsletterEmail,
+    };
+    client
+      .create(emailMessage)
+      .then(() => setIsEmailSubmitted(true))
+      .catch((error) => console.log(error.response.body.error.description));
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -151,6 +166,9 @@ export const BlogContextProvider = ({ children }) => {
         blogComment,
         animateFilter,
         animateCard,
+        handleEmailChange,
+        handleEmailSubmit,
+        isEmailSubmitted,
       }}
     >
       {children}
