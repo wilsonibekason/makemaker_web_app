@@ -141,6 +141,14 @@ export const blogComments = `*[_type == "blogComments"]{
     _updatedAt,
     _createdAt,
   }`;
+// initialsing productscomments
+export const productReview = `*[_type == "reviews"]{
+    name,
+    email,
+    review,
+    _updatedAt,
+    _createdAt,
+  }`;
 // initialising productDetailQuery
 export const productDetailQuery = (productId) => {
   const query = `*[_type == "banner" && _id == '${productId}']{
