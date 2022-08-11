@@ -1,6 +1,6 @@
 import { urlFor } from "../../client";
 import moment from "moment";
-import { motion } from "motion";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 const MoreBlogs = ({
   title,
@@ -18,22 +18,37 @@ const MoreBlogs = ({
   return (
     <>
       {/**start of card component */}
-      <div
+      <motion.div
         class="max-w-lg px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800"
         style={{ cursor: "auto" }}
+        whileHover={{
+          scale: 1.1,
+        }}
+        initial={{
+          y: -80,
+        }}
+        animate={{
+          y: 0,
+        }}
+        transition={{
+          delay: 0.1,
+          duration: 0.1,
+          type: "spring",
+          stiffness: 500,
+        }}
       >
         <div class="flex items-center justify-between">
           <span class="text-sm font-light text-gray-600 dark:text-gray-400">
             {moment(publishedAt).format("MMM DD, YYYY")}
           </span>
-          <a class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
+          <a class="px-3 py-1 text-sm font-base text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
             {title}
           </a>
         </div>
         <div class="mt-2">
           <a
             href="https://stackdiary.com/"
-            class="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
+            class="text-2xl font-base text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"
           >
             {title}
           </a>
@@ -54,12 +69,12 @@ const MoreBlogs = ({
               alt="Author Photo"
               class="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
             />
-            <a class="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
+            <a class="font-base text-gray-700 cursor-pointer dark:text-gray-200">
               {name}
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/**end of card components */}
     </>
   );
