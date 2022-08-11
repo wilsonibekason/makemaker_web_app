@@ -62,7 +62,12 @@ const Product = () => {
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                     <div className="pr-12">
-                      <h1 className="text-2xl font-bold text-white">{name}</h1>
+                      <motion.h1
+                        className="text-2xl font-bold text-white"
+                        animate={{ fontSize: 50, color: "ButtonText" }}
+                      >
+                        {name}
+                      </motion.h1>
                       <p className="text-base leading-relaxed text-white">
                         {" "}
                         {desc}

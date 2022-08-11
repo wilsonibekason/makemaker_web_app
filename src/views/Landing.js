@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 // components
 
 import Navbar from "../components/Navbars/AuthNavbar.js";
@@ -121,8 +121,24 @@ export default function Landing() {
                 </div>
               </div>
 
-              <div className="w-full md:w-4/12 px-4 text-center">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+              <motion.div
+                className="w-full md:w-4/12 px-4 text-center"
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: [1, 2, 2, 1, 1],
+                  // rotate: [0, 0, 270, 270, 0],
+                  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                }}
+                transition={{
+                  duration: 0.5,
+                  delayChildren: 0.5,
+                }}
+              >
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg ease-linear transition-all duration-150">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
                       <i className={`fas ${sectionItem2?.icons}`}></i>
@@ -135,7 +151,7 @@ export default function Landing() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               <div className="pt-6 w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">

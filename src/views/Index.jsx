@@ -178,7 +178,29 @@ const Index = () => {
                 <div className="items-center flex flex-wrap">
                   <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                     <div className="pr-12 mt-16 lg:mt-40">
-                      <h1 className="text-white font-bold text-4xl">{title}</h1>
+                      <motion.h1
+                        className="text-white font-bold text-4xl"
+                        initial={{
+                          y: -80,
+                          x: 0,
+                          opacity: 0,
+                        }}
+                        animate={{
+                          fontSize: "35px",
+                          color: "blue",
+                          x: 0,
+                          y: -40,
+                          opacity: 1,
+                        }}
+                        transition={{
+                          delay: 1.5,
+                          duration: 1,
+                          type: "spring",
+                          stiffness: 500,
+                        }}
+                      >
+                        {title}
+                      </motion.h1>
                       <p className="mt-4 text-sm text-gray-200">
                         {description}
                       </p>
